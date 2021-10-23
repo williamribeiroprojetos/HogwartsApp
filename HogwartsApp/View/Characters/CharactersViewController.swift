@@ -23,13 +23,13 @@ class CharactersViewController: UIViewController {
         self.charactersTableView.dataSource = self
         
         
-//        self.controller.getPersonagem { result in
-//            if result {
-//                self.charactersTableView.reloadData()
-//            } else {
-//                print("Erro")
-//            }
-//        }
+        self.controller.getPersonagem { result in
+            if result {
+                self.charactersTableView.reloadData()
+            } else {
+                print("Erro")
+            }
+        }
         
         // Do any additional setup after loading the view.
     }

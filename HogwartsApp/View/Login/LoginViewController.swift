@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import FirebaseAuth
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -52,24 +52,24 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedLoginButton(_ sender: UIButton) {
-        self.continueToHome()
-//        if validateForm() == true {
-//            do {
-//                let email = emailTextField.text ?? ""
-//                let password = passwordTextField.text ?? ""
+//        self.continueToHome()
+        if validateForm() == true {
+            do {
+                let email = emailTextField.text ?? ""
+                let password = passwordTextField.text ?? ""
                 
-//                FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
-//                    guard let strongSelf = self else {
-//                        return
-//                }
-//                    guard error == nil else {
-//                        print("usuário logado no Firebase")
-//                        return
-//                    }
-//                    strongSelf.continueToHome()
-//                }
-//            }
-//        }
+                FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+                    guard let strongSelf = self else {
+                        return
+                }
+                    guard error == nil else {
+                        print("usuário logado no Firebase")
+                        return
+                    }
+                    strongSelf.continueToHome()
+                }
+            }
+        }
     }
     
     @IBAction func tappedShowPasswordButton(_ sender: Any) {
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
     }
     
     func isUserLoggedIn() -> Bool {
-//      return Auth.auth().currentUser != nil
+      return Auth.auth().currentUser != nil
         return false
     }
     

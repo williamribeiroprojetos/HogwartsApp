@@ -1,0 +1,6 @@
+framework module Pods_HogwartsApp {
+  umbrella header "Pods-HogwartsApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

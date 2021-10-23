@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import FirebaseAuth
+import FirebaseAuth
 
 class CreateAccountViewController: UIViewController {
 
@@ -123,48 +123,48 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func tappedSignInButton(_ sender: Any) {
-        self.continueToHome()
-//        if validateForm() == true {
-//            do {
-//                let email = emailTextField.text ?? ""
-//                let password = passwordTextField.text ?? ""
+//        self.continueToHome()
+        if validateForm() == true {
+            do {
+                let email = emailTextField.text ?? ""
+                let password = passwordTextField.text ?? ""
         
-//                FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-//                    guard let strongSelf = self else {
-//                        return
-//                }
-//                    guard error == nil else {
-//                        strongSelf.showCreateAccount(email: email, password: password)
-//                        return
-//                    }
-//                    guard error != nil else {
-//                        strongSelf.errorCreateAccount()
-//                        return
-//                    }
-//                }
-//            }
-//        }
+                FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+                    guard let strongSelf = self else {
+                        return
+                }
+                    guard error == nil else {
+                        strongSelf.showCreateAccount(email: email, password: password)
+                        return
+                    }
+                    guard error != nil else {
+                        strongSelf.errorCreateAccount()
+                        return
+                    }
+                }
+            }
+        }
     }
     
     func showCreateAccount(email: String, password: String) {
         
         let alert = UIAlertController(title: "PARABÉNS!", message: "Sua conta foi criada com sucesso", preferredStyle: .alert)
         
-//        let action = UIAlertAction(title: "Continuar", style: .default) { _ in
+        let action = UIAlertAction(title: "Continuar", style: .default) { _ in
             
-//            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-//                guard let strongSelf = self else {
-//                    return
-//            }
-//                guard error == nil else {
-//                    print("Usuário criado no Firebase")
-//                    return
-//                }
-//                strongSelf.continueToHome()
-//            }
-//        }
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+                guard let strongSelf = self else {
+                    return
+            }
+                guard error == nil else {
+                    print("Usuário criado no Firebase")
+                    return
+                }
+                strongSelf.continueToHome()
+            }
+        }
         
-//        alert.addAction(action)
+        alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
     
