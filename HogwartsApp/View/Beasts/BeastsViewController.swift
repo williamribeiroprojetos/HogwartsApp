@@ -22,6 +22,7 @@ class BeastsViewController: UIViewController {
         self.beastsTableView.dataSource = self
         
         self.controller.loadBeasts()
+        title = "Animais Fantásticos"
 
         // Do any additional setup after loading the view.
     }

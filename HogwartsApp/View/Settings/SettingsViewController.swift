@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
     
@@ -33,6 +34,35 @@ class SettingsViewController: UIViewController {
 
     @IBAction func tappedChangeProfileImageButton(_ sender: UIButton) {
         
+    }
+    
+    private func alertLogOut() {
+        let alert = UIAlertController(title: "ATENÇÃO!", message: "Deseja realmente deslogar de sua conta?", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Continuar", style: .default) { _ in
+            let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+                print("Usuário deslogado")
+                self.continueToLogin()
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func continueToLogin() {
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        vc.providesPresentationContextTransitionStyle = true
+        vc.definesPresentationContext = true
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
 
@@ -67,6 +97,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             email.definesPresentationContext = true
             email.modalPresentationStyle = .automatic
             self.present(email, animated: true)
+        } else if buttons == "Sair" {
+            self.alertLogOut()
         }
     }
     

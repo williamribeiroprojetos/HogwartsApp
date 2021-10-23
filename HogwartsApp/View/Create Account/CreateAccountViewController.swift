@@ -20,6 +20,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var bdayLabel: UILabel!
     @IBOutlet weak var bdayTextField: UITextField!
+    @IBOutlet weak var bdayDatePicker: UIDatePicker!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -37,11 +38,9 @@ class CreateAccountViewController: UIViewController {
     
     var showPassword = true
     var showConfirmPassword = true
-    var arrayPaises: [String] = ["Brasil", "USA", "United Kingdom", "Mexico", "Ireland"]
-    var pickerTown = UIPickerView()
-    var pickerState = UIPickerView()
+    var arrayPaises: [String] = ["Brasil", "Angola", "Portugal", "Mexico", "USA"]
     var pickerCountry = UIPickerView()
-    let datePicker = UIDatePicker()
+    var datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +53,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     func createDatePicker() {
+//        self.datePicker = self.bdayDatePicker
         //toolbar
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -96,6 +96,7 @@ class CreateAccountViewController: UIViewController {
         
         //PickerView properties
         self.countryTextField.inputView = self.pickerCountry
+        self.bdayDatePicker.isHidden = true
     }
     
     @IBAction func didTappedShowPassword(_ sender: UIButton) {

@@ -18,7 +18,6 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var feedbackView: UIView!
     @IBOutlet weak var labelFeedback: UILabel!
     @IBOutlet weak var buttonFeedback: UIButton!
-    @IBOutlet weak var back: UIButton!
 
 
     private var alert: Alert?
@@ -34,6 +33,8 @@ class QuestionsViewController: UIViewController {
         loadQuestions()
         startQuiz()
         // Do any additional setup after loading the view.
+        title = "Quiz"
+        buttonFeedback.layer.cornerRadius = buttonFeedback.frame.height / 2
     }
 
     func loadQuestions() -> Void {

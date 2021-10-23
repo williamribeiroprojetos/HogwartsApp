@@ -20,6 +20,7 @@ class HatViewController: UIViewController {
         // Do any additional setup after loading the view.
         suffleButton.layer.cornerRadius = suffleButton.frame.height / 2
         nameTextField.setEditingColor()
+        title = "Chapéu Seletor"
     }
     
     @IBAction func luckButton(_ sender: UIButton) {

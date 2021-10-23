@@ -17,6 +17,7 @@ class QuizViewController: UIViewController {
         self.buttonGoQuiz.layer.cornerRadius = buttonGoQuiz.layer.frame.height / 2
         self.buttonGoQuiz.layer.borderWidth = 1
         // Do any additional setup after loading the view.
+        title = "Introdução ao Quiz"
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {

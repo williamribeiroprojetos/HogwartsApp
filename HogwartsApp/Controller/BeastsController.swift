@@ -28,7 +28,7 @@ class BeastsController {
     }
     
     func beastsName(indexPath: IndexPath) -> String {
-        return self.arrayBeasts[indexPath.row].name 
+        return self.arrayBeasts[indexPath.row].name ?? ""
     }
     
     func loadBeasts() {

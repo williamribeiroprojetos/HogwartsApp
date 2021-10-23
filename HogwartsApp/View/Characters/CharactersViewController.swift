@@ -22,6 +22,7 @@ class CharactersViewController: UIViewController {
         self.charactersTableView.delegate = self
         self.charactersTableView.dataSource = self
         
+        title = "Personagens"
         
         self.controller.getPersonagem { result in
             if result {

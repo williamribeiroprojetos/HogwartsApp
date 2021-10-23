@@ -71,15 +71,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxR-z9-uv9" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sa5-OB-oMC">
-                                        <rect key="frame" x="20" y="50" width="374" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="oC7-R2-yTQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
-                                        <color key="textColor" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDW-4B-2su">
                                         <rect key="frame" x="20" y="110" width="374" height="220"/>
                                         <constraints>
@@ -121,13 +112,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="qTu-5I-jAN" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="3aD-d1-Q9u"/>
-                                    <constraint firstItem="sa5-OB-oMC" firstAttribute="top" secondItem="bxR-z9-uv9" secondAttribute="top" constant="50" id="J4E-xH-3GV"/>
                                     <constraint firstAttribute="bottom" secondItem="qTu-5I-jAN" secondAttribute="bottom" constant="40" id="KHY-Im-b9V"/>
-                                    <constraint firstAttribute="trailing" secondItem="sa5-OB-oMC" secondAttribute="trailing" constant="20" id="P0x-Rb-6BT"/>
-                                    <constraint firstItem="sa5-OB-oMC" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="Td5-5k-cX3"/>
                                     <constraint firstAttribute="trailing" secondItem="RDW-4B-2su" secondAttribute="trailing" constant="20" id="UYP-H0-3Md"/>
                                     <constraint firstItem="qTu-5I-jAN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hAT-E5-Yam" secondAttribute="bottom" constant="40" id="ZJh-Lk-PJC"/>
-                                    <constraint firstItem="RDW-4B-2su" firstAttribute="top" secondItem="sa5-OB-oMC" secondAttribute="bottom" constant="35" id="gM4-eu-e5c"/>
+                                    <constraint firstItem="RDW-4B-2su" firstAttribute="top" secondItem="bxR-z9-uv9" secondAttribute="top" constant="110" id="aOT-2z-uU8"/>
                                     <constraint firstItem="hAT-E5-Yam" firstAttribute="top" secondItem="RDW-4B-2su" secondAttribute="bottom" constant="30" id="l1I-xd-EhJ"/>
                                     <constraint firstItem="hAT-E5-Yam" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="lll-0H-FqZ"/>
                                     <constraint firstAttribute="trailing" secondItem="hAT-E5-Yam" secondAttribute="trailing" constant="20" id="mZc-uE-dJA"/>
@@ -157,7 +145,6 @@
                         <outlet property="characterImage" destination="RDW-4B-2su" id="zzH-XC-AOA"/>
                         <outlet property="descriptionLabel" destination="hAT-E5-Yam" id="eFs-8G-xzY"/>
                         <outlet property="saveFavoriteButton" destination="qTu-5I-jAN" id="O1M-zM-X3t"/>
-                        <outlet property="titleLabel" destination="sa5-OB-oMC" id="gdD-bC-yhg"/>
                         <outlet property="viewMain" destination="bxR-z9-uv9" id="Gi0-fC-DdW"/>
                     </connections>
                 </viewController>

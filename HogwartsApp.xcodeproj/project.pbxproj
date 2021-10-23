@@ -12,6 +12,8 @@
 		B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */; };
 		B4163A4C271CB02900B6C89E /* BeastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A4B271CB02900B6C89E /* BeastsViewController.swift */; };
 		B4163A4E271CB03100B6C89E /* BeastsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A4D271CB03100B6C89E /* BeastsDetailViewController.swift */; };
+		B416E3DF272493D40076DF66 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B416E3DE272493D30076DF66 /* Alert.swift */; };
+		B416E3E12724962B0076DF66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B416E3E02724962B0076DF66 /* GoogleService-Info.plist */; };
 		B430165D2720614000B7C199 /* ButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430165B2720614000B7C199 /* ButtonTableCell.swift */; };
 		B430165E2720614000B7C199 /* ButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B430165C2720614000B7C199 /* ButtonTableCell.xib */; };
 		B430166127206FAD00B7C199 /* PersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166027206FAD00B7C199 /* PersonalDataViewController.swift */; };
@@ -21,6 +23,7 @@
 		B430166A272080FC00B7C199 /* ContentTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4301668272080FC00B7C199 /* ContentTableCell.xib */; };
 		B430166C2720829900B7C199 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B430166B2720829900B7C199 /* HeaderView.xib */; };
 		B430166E272083A500B7C199 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166D272083A500B7C199 /* HeaderView.swift */; };
+		B43FE70C2724A38600FDE5FE /* QuizHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FE70B2724A38600FDE5FE /* QuizHelper.swift */; };
 		B45D30CE2713B77900DF2EA3 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45D30CD2713B77900DF2EA3 /* User.storyboard */; };
 		B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD81270D25D500C1347B /* AppDelegate.swift */; };
 		B4E4DD84270D25D500C1347B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD83270D25D500C1347B /* SceneDelegate.swift */; };
@@ -67,6 +70,8 @@
 		B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewController.swift; sourceTree = "<group>"; };
 		B4163A4B271CB02900B6C89E /* BeastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsViewController.swift; sourceTree = "<group>"; };
 		B4163A4D271CB03100B6C89E /* BeastsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsDetailViewController.swift; sourceTree = "<group>"; };
+		B416E3DE272493D30076DF66 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B416E3E02724962B0076DF66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B430165B2720614000B7C199 /* ButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableCell.swift; sourceTree = "<group>"; };
 		B430165C2720614000B7C199 /* ButtonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableCell.xib; sourceTree = "<group>"; };
 		B430166027206FAD00B7C199 /* PersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		B4301668272080FC00B7C199 /* ContentTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableCell.xib; sourceTree = "<group>"; };
 		B430166B2720829900B7C199 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B430166D272083A500B7C199 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B43FE70B2724A38600FDE5FE /* QuizHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHelper.swift; sourceTree = "<group>"; };
 		B45D30CD2713B77900DF2EA3 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B4E4DD7E270D25D500C1347B /* HogwartsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HogwartsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E4DD81270D25D500C1347B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				B4E4DD9A270D2FFB00C1347B /* Delegate */,
 				B4E4DD8A270D25D800C1347B /* Assets.xcassets */,
 				B4E4DD8F270D25D800C1347B /* Info.plist */,
+				B416E3E02724962B0076DF66 /* GoogleService-Info.plist */,
 			);
 			path = HogwartsApp;
 			sourceTree = "<group>";
@@ -274,10 +281,12 @@
 		B4E4DD9B270D30AB00C1347B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B416E3DE272493D30076DF66 /* Alert.swift */,
 				B4E4DD9C270D30D400C1347B /* GradientView.swift */,
 				B4E4DD9E270D30E800C1347B /* ButtonGradient.swift */,
 				B4E4DDA0270D30F300C1347B /* UITextFieldHelper.swift */,
 				B4EE2D5C2714C8AB003C8D61 /* defaultLinks.swift */,
+				B43FE70B2724A38600FDE5FE /* QuizHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -478,6 +487,7 @@
 				B4E4DD8B270D25D800C1347B /* Assets.xcassets in Resources */,
 				B430166A272080FC00B7C199 /* ContentTableCell.xib in Resources */,
 				B4EE2D3427149EC7003C8D61 /* Characters.storyboard in Resources */,
+				B416E3E12724962B0076DF66 /* GoogleService-Info.plist in Resources */,
 				B430165E2720614000B7C199 /* ButtonTableCell.xib in Resources */,
 				B4EE2D402714A6EE003C8D61 /* Personagens.json in Resources */,
 				B4E4DD89270D25D500C1347B /* Main.storyboard in Resources */,
@@ -556,12 +566,14 @@
 				B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */,
 				B4E4DDA1270D30F300C1347B /* UITextFieldHelper.swift in Sources */,
 				B4EE2D712714DF73003C8D61 /* HatViewController.swift in Sources */,
+				B416E3DF272493D40076DF66 /* Alert.swift in Sources */,
 				B4163A4E271CB03100B6C89E /* BeastsDetailViewController.swift in Sources */,
 				B4EE2D5B2714C5CA003C8D61 /* SettingsViewController.swift in Sources */,
 				B430166E272083A500B7C199 /* HeaderView.swift in Sources */,
 				B430166127206FAD00B7C199 /* PersonalDataViewController.swift in Sources */,
 				B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */,
 				B4E4DD9D270D30D400C1347B /* GradientView.swift in Sources */,
+				B43FE70C2724A38600FDE5FE /* QuizHelper.swift in Sources */,
 				B4EE2D562714A92E003C8D61 /* MyFavoritesViewController.swift in Sources */,
 				B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */,
 				B4EE2D672714D9B2003C8D61 /* CharactersTableCell.swift in Sources */,

@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
         self.loginButton.layer.borderWidth = 1
-        
         }
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
