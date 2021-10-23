@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A47271CAFD900B6C89E /* CharactersViewController.swift */; };
+		B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */; };
+		B4163A4C271CB02900B6C89E /* BeastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A4B271CB02900B6C89E /* BeastsViewController.swift */; };
+		B4163A4E271CB03100B6C89E /* BeastsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A4D271CB03100B6C89E /* BeastsDetailViewController.swift */; };
+		B430165D2720614000B7C199 /* ButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430165B2720614000B7C199 /* ButtonTableCell.swift */; };
+		B430165E2720614000B7C199 /* ButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B430165C2720614000B7C199 /* ButtonTableCell.xib */; };
+		B430166127206FAD00B7C199 /* PersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166027206FAD00B7C199 /* PersonalDataViewController.swift */; };
+		B430166327206FD200B7C199 /* EmailEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166227206FD200B7C199 /* EmailEditorViewController.swift */; };
+		B430166527206FF400B7C199 /* PasswordEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166427206FF400B7C199 /* PasswordEditorViewController.swift */; };
+		B4301669272080FC00B7C199 /* ContentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4301667272080FC00B7C199 /* ContentTableCell.swift */; };
+		B430166A272080FC00B7C199 /* ContentTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4301668272080FC00B7C199 /* ContentTableCell.xib */; };
+		B430166C2720829900B7C199 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B430166B2720829900B7C199 /* HeaderView.xib */; };
+		B430166E272083A500B7C199 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166D272083A500B7C199 /* HeaderView.swift */; };
+		B45D30CE2713B77900DF2EA3 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45D30CD2713B77900DF2EA3 /* User.storyboard */; };
+		B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD81270D25D500C1347B /* AppDelegate.swift */; };
+		B4E4DD84270D25D500C1347B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD83270D25D500C1347B /* SceneDelegate.swift */; };
+		B4E4DD86270D25D500C1347B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD85270D25D500C1347B /* HomeViewController.swift */; };
+		B4E4DD89270D25D500C1347B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E4DD87270D25D500C1347B /* Main.storyboard */; };
+		B4E4DD8B270D25D800C1347B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E4DD8A270D25D800C1347B /* Assets.xcassets */; };
+		B4E4DD8E270D25D800C1347B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E4DD8C270D25D800C1347B /* LaunchScreen.storyboard */; };
+		B4E4DD9D270D30D400C1347B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD9C270D30D400C1347B /* GradientView.swift */; };
+		B4E4DD9F270D30E800C1347B /* ButtonGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD9E270D30E800C1347B /* ButtonGradient.swift */; };
+		B4E4DDA1270D30F300C1347B /* UITextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DDA0270D30F300C1347B /* UITextFieldHelper.swift */; };
+		B4E4DDA7270D35AA00C1347B /* ButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DDA6270D35AA00C1347B /* ButtonCollectionCell.swift */; };
+		B4E4DDA9270D35B300C1347B /* ButtonCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E4DDA8270D35B300C1347B /* ButtonCollectionCell.xib */; };
+		B4EE2D3427149EC7003C8D61 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D3327149EC7003C8D61 /* Characters.storyboard */; };
+		B4EE2D362714A1B9003C8D61 /* Beasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D352714A1B9003C8D61 /* Beasts.storyboard */; };
+		B4EE2D382714A20D003C8D61 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D372714A20D003C8D61 /* Quiz.storyboard */; };
+		B4EE2D3A2714A560003C8D61 /* Hat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D392714A560003C8D61 /* Hat.storyboard */; };
+		B4EE2D3C2714A6C1003C8D61 /* Beasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D3B2714A6C1003C8D61 /* Beasts.swift */; };
+		B4EE2D3E2714A6E0003C8D61 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D3D2714A6E0003C8D61 /* Character.swift */; };
+		B4EE2D402714A6EE003C8D61 /* Personagens.json in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D3F2714A6EE003C8D61 /* Personagens.json */; };
+		B4EE2D422714A6F6003C8D61 /* Beasts.json in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D412714A6F6003C8D61 /* Beasts.json */; };
+		B4EE2D442714A732003C8D61 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D432714A732003C8D61 /* MainController.swift */; };
+		B4EE2D462714A73C003C8D61 /* BeastsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D452714A73C003C8D61 /* BeastsController.swift */; };
+		B4EE2D482714A743003C8D61 /* CharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D472714A743003C8D61 /* CharactersController.swift */; };
+		B4EE2D542714A815003C8D61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D532714A814003C8D61 /* MainViewController.swift */; };
+		B4EE2D562714A92E003C8D61 /* MyFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D552714A92E003C8D61 /* MyFavoritesViewController.swift */; };
+		B4EE2D582714C18F003C8D61 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D572714C18F003C8D61 /* UserSettings.storyboard */; };
+		B4EE2D5B2714C5CA003C8D61 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D5A2714C5CA003C8D61 /* SettingsViewController.swift */; };
+		B4EE2D5D2714C8AB003C8D61 /* defaultLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D5C2714C8AB003C8D61 /* defaultLinks.swift */; };
+		B4EE2D5F2714CE00003C8D61 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D5E2714CE00003C8D61 /* CreateAccountViewController.swift */; };
+		B4EE2D612714CE0E003C8D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D602714CE0E003C8D61 /* LoginViewController.swift */; };
+		B4EE2D632714D4D6003C8D61 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D622714D4D6003C8D61 /* PasswordRecoveryViewController.swift */; };
+		B4EE2D652714D9A9003C8D61 /* CharactersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D642714D9A9003C8D61 /* CharactersTableCell.xib */; };
+		B4EE2D672714D9B2003C8D61 /* CharactersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D662714D9B2003C8D61 /* CharactersTableCell.swift */; };
+		B4EE2D692714D9C8003C8D61 /* BeastTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EE2D682714D9C8003C8D61 /* BeastTableCell.xib */; };
+		B4EE2D6B2714D9CF003C8D61 /* BeastTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D6A2714D9CF003C8D61 /* BeastTableCell.swift */; };
+		B4EE2D6D2714DB58003C8D61 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D6C2714DB58003C8D61 /* QuizViewController.swift */; };
+		B4EE2D6F2714DB61003C8D61 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D6E2714DB61003C8D61 /* QuestionsViewController.swift */; };
+		B4EE2D712714DF73003C8D61 /* HatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE2D702714DF73003C8D61 /* HatViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B4163A47271CAFD900B6C89E /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewController.swift; sourceTree = "<group>"; };
+		B4163A4B271CB02900B6C89E /* BeastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsViewController.swift; sourceTree = "<group>"; };
+		B4163A4D271CB03100B6C89E /* BeastsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsDetailViewController.swift; sourceTree = "<group>"; };
+		B430165B2720614000B7C199 /* ButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableCell.swift; sourceTree = "<group>"; };
+		B430165C2720614000B7C199 /* ButtonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableCell.xib; sourceTree = "<group>"; };
+		B430166027206FAD00B7C199 /* PersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataViewController.swift; sourceTree = "<group>"; };
+		B430166227206FD200B7C199 /* EmailEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailEditorViewController.swift; sourceTree = "<group>"; };
+		B430166427206FF400B7C199 /* PasswordEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEditorViewController.swift; sourceTree = "<group>"; };
+		B4301667272080FC00B7C199 /* ContentTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableCell.swift; sourceTree = "<group>"; };
+		B4301668272080FC00B7C199 /* ContentTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableCell.xib; sourceTree = "<group>"; };
+		B430166B2720829900B7C199 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		B430166D272083A500B7C199 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B45D30CD2713B77900DF2EA3 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		B4E4DD7E270D25D500C1347B /* HogwartsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HogwartsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E4DD81270D25D500C1347B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4E4DD83270D25D500C1347B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B4E4DD85270D25D500C1347B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B4E4DD88270D25D500C1347B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4E4DD8A270D25D800C1347B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4E4DD8D270D25D800C1347B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B4E4DD8F270D25D800C1347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4E4DD9C270D30D400C1347B /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B4E4DD9E270D30E800C1347B /* ButtonGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonGradient.swift; sourceTree = "<group>"; };
+		B4E4DDA0270D30F300C1347B /* UITextFieldHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldHelper.swift; sourceTree = "<group>"; };
+		B4E4DDA6270D35AA00C1347B /* ButtonCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCollectionCell.swift; sourceTree = "<group>"; };
+		B4E4DDA8270D35B300C1347B /* ButtonCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCollectionCell.xib; sourceTree = "<group>"; };
+		B4EE2D3327149EC7003C8D61 /* Characters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
+		B4EE2D352714A1B9003C8D61 /* Beasts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Beasts.storyboard; sourceTree = "<group>"; };
+		B4EE2D372714A20D003C8D61 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		B4EE2D392714A560003C8D61 /* Hat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hat.storyboard; sourceTree = "<group>"; };
+		B4EE2D3B2714A6C1003C8D61 /* Beasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beasts.swift; sourceTree = "<group>"; };
+		B4EE2D3D2714A6E0003C8D61 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		B4EE2D3F2714A6EE003C8D61 /* Personagens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Personagens.json; sourceTree = "<group>"; };
+		B4EE2D412714A6F6003C8D61 /* Beasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Beasts.json; sourceTree = "<group>"; };
+		B4EE2D432714A732003C8D61 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		B4EE2D452714A73C003C8D61 /* BeastsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsController.swift; sourceTree = "<group>"; };
+		B4EE2D472714A743003C8D61 /* CharactersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersController.swift; sourceTree = "<group>"; };
+		B4EE2D532714A814003C8D61 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B4EE2D552714A92E003C8D61 /* MyFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewController.swift; sourceTree = "<group>"; };
+		B4EE2D572714C18F003C8D61 /* UserSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
+		B4EE2D5A2714C5CA003C8D61 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B4EE2D5C2714C8AB003C8D61 /* defaultLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultLinks.swift; sourceTree = "<group>"; };
+		B4EE2D5E2714CE00003C8D61 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		B4EE2D602714CE0E003C8D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B4EE2D622714D4D6003C8D61 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		B4EE2D642714D9A9003C8D61 /* CharactersTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharactersTableCell.xib; sourceTree = "<group>"; };
+		B4EE2D662714D9B2003C8D61 /* CharactersTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersTableCell.swift; sourceTree = "<group>"; };
+		B4EE2D682714D9C8003C8D61 /* BeastTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeastTableCell.xib; sourceTree = "<group>"; };
+		B4EE2D6A2714D9CF003C8D61 /* BeastTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastTableCell.swift; sourceTree = "<group>"; };
+		B4EE2D6C2714DB58003C8D61 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		B4EE2D6E2714DB61003C8D61 /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		B4EE2D702714DF73003C8D61 /* HatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4E4DD7B270D25D500C1347B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B430165A2720610E00B7C199 /* Custom Button */ = {
+			isa = PBXGroup;
+			children = (
+				B430165B2720614000B7C199 /* ButtonTableCell.swift */,
+				B430165C2720614000B7C199 /* ButtonTableCell.xib */,
+			);
+			path = "Custom Button";
+			sourceTree = "<group>";
+		};
+		B430165F27206F7800B7C199 /* Data Editors */ = {
+			isa = PBXGroup;
+			children = (
+				B430166027206FAD00B7C199 /* PersonalDataViewController.swift */,
+				B430166227206FD200B7C199 /* EmailEditorViewController.swift */,
+				B430166427206FF400B7C199 /* PasswordEditorViewController.swift */,
+			);
+			path = "Data Editors";
+			sourceTree = "<group>";
+		};
+		B4301666272080C200B7C199 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B4301667272080FC00B7C199 /* ContentTableCell.swift */,
+				B4301668272080FC00B7C199 /* ContentTableCell.xib */,
+				B430166B2720829900B7C199 /* HeaderView.xib */,
+				B430166D272083A500B7C199 /* HeaderView.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		B4E4DD75270D25D500C1347B = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD80270D25D500C1347B /* HogwartsApp */,
+				B4E4DD7F270D25D500C1347B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4E4DD7F270D25D500C1347B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD7E270D25D500C1347B /* HogwartsApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4E4DD80270D25D500C1347B /* HogwartsApp */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD99270D2FEB00C1347B /* Mock */,
+				B4E4DD98270D2FDD00C1347B /* Model */,
+				B4E4DD97270D2FD400C1347B /* View */,
+				B4E4DD96270D2FC900C1347B /* Controller */,
+				B4E4DD95270D2F9A00C1347B /* Storyboards */,
+				B4E4DD9B270D30AB00C1347B /* Helpers */,
+				B4E4DD9A270D2FFB00C1347B /* Delegate */,
+				B4E4DD8A270D25D800C1347B /* Assets.xcassets */,
+				B4E4DD8F270D25D800C1347B /* Info.plist */,
+			);
+			path = HogwartsApp;
+			sourceTree = "<group>";
+		};
+		B4E4DD95270D2F9A00C1347B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD8C270D25D800C1347B /* LaunchScreen.storyboard */,
+				B4E4DD87270D25D500C1347B /* Main.storyboard */,
+				B45D30CD2713B77900DF2EA3 /* User.storyboard */,
+				B4EE2D3327149EC7003C8D61 /* Characters.storyboard */,
+				B4EE2D352714A1B9003C8D61 /* Beasts.storyboard */,
+				B4EE2D372714A20D003C8D61 /* Quiz.storyboard */,
+				B4EE2D392714A560003C8D61 /* Hat.storyboard */,
+				B4EE2D572714C18F003C8D61 /* UserSettings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B4E4DD96270D2FC900C1347B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D452714A73C003C8D61 /* BeastsController.swift */,
+				B4EE2D432714A732003C8D61 /* MainController.swift */,
+				B4EE2D472714A743003C8D61 /* CharactersController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4E4DD97270D2FD400C1347B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D592714C5B4003C8D61 /* Settings */,
+				B4EE2D522714A7EF003C8D61 /* My Favorites */,
+				B4EE2D512714A7E5003C8D61 /* Hat */,
+				B4EE2D502714A7C9003C8D61 /* Quiz */,
+				B4EE2D4F2714A7BB003C8D61 /* Password Recovery */,
+				B4EE2D4E2714A7AF003C8D61 /* Create Account */,
+				B4EE2D4D2714A7A7003C8D61 /* Login */,
+				B4EE2D4B2714A78B003C8D61 /* Beasts */,
+				B4EE2D492714A758003C8D61 /* Characters */,
+				B4E4DDA4270D358F00C1347B /* Home */,
+				B4EE2D532714A814003C8D61 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4E4DD98270D2FDD00C1347B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D3B2714A6C1003C8D61 /* Beasts.swift */,
+				B4EE2D3D2714A6E0003C8D61 /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E4DD99270D2FEB00C1347B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D3F2714A6EE003C8D61 /* Personagens.json */,
+				B4EE2D412714A6F6003C8D61 /* Beasts.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		B4E4DD9A270D2FFB00C1347B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD81270D25D500C1347B /* AppDelegate.swift */,
+				B4E4DD83270D25D500C1347B /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B4E4DD9B270D30AB00C1347B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DD9C270D30D400C1347B /* GradientView.swift */,
+				B4E4DD9E270D30E800C1347B /* ButtonGradient.swift */,
+				B4E4DDA0270D30F300C1347B /* UITextFieldHelper.swift */,
+				B4EE2D5C2714C8AB003C8D61 /* defaultLinks.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B4E4DDA4270D358F00C1347B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DDA5270D359E00C1347B /* Custom Cell */,
+				B4E4DD85270D25D500C1347B /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B4E4DDA5270D359E00C1347B /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4DDA6270D35AA00C1347B /* ButtonCollectionCell.swift */,
+				B4E4DDA8270D35B300C1347B /* ButtonCollectionCell.xib */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		B4EE2D492714A758003C8D61 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D4A2714A76C003C8D61 /* Characters Custom Cell */,
+				B4163A47271CAFD900B6C89E /* CharactersViewController.swift */,
+				B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		B4EE2D4A2714A76C003C8D61 /* Characters Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D642714D9A9003C8D61 /* CharactersTableCell.xib */,
+				B4EE2D662714D9B2003C8D61 /* CharactersTableCell.swift */,
+			);
+			path = "Characters Custom Cell";
+			sourceTree = "<group>";
+		};
+		B4EE2D4B2714A78B003C8D61 /* Beasts */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D4C2714A795003C8D61 /* Beasts Custom Cell */,
+				B4163A4B271CB02900B6C89E /* BeastsViewController.swift */,
+				B4163A4D271CB03100B6C89E /* BeastsDetailViewController.swift */,
+			);
+			path = Beasts;
+			sourceTree = "<group>";
+		};
+		B4EE2D4C2714A795003C8D61 /* Beasts Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D682714D9C8003C8D61 /* BeastTableCell.xib */,
+				B4EE2D6A2714D9CF003C8D61 /* BeastTableCell.swift */,
+			);
+			path = "Beasts Custom Cell";
+			sourceTree = "<group>";
+		};
+		B4EE2D4D2714A7A7003C8D61 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D602714CE0E003C8D61 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B4EE2D4E2714A7AF003C8D61 /* Create Account */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D5E2714CE00003C8D61 /* CreateAccountViewController.swift */,
+			);
+			path = "Create Account";
+			sourceTree = "<group>";
+		};
+		B4EE2D4F2714A7BB003C8D61 /* Password Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D622714D4D6003C8D61 /* PasswordRecoveryViewController.swift */,
+			);
+			path = "Password Recovery";
+			sourceTree = "<group>";
+		};
+		B4EE2D502714A7C9003C8D61 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D6C2714DB58003C8D61 /* QuizViewController.swift */,
+				B4EE2D6E2714DB61003C8D61 /* QuestionsViewController.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		B4EE2D512714A7E5003C8D61 /* Hat */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE2D702714DF73003C8D61 /* HatViewController.swift */,
+			);
+			path = Hat;
+			sourceTree = "<group>";
+		};
+		B4EE2D522714A7EF003C8D61 /* My Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B4301666272080C200B7C199 /* Custom Cells */,
+				B4EE2D552714A92E003C8D61 /* MyFavoritesViewController.swift */,
+			);
+			path = "My Favorites";
+			sourceTree = "<group>";
+		};
+		B4EE2D592714C5B4003C8D61 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B430165F27206F7800B7C199 /* Data Editors */,
+				B430165A2720610E00B7C199 /* Custom Button */,
+				B4EE2D5A2714C5CA003C8D61 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4E4DD7D270D25D500C1347B /* HogwartsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4E4DD92270D25D800C1347B /* Build configuration list for PBXNativeTarget "HogwartsApp" */;
+			buildPhases = (
+				B4E4DD7A270D25D500C1347B /* Sources */,
+				B4E4DD7B270D25D500C1347B /* Frameworks */,
+				B4E4DD7C270D25D500C1347B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HogwartsApp;
+			productName = HogwartsApp;
+			productReference = B4E4DD7E270D25D500C1347B /* HogwartsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4E4DD76270D25D500C1347B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					B4E4DD7D270D25D500C1347B = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = B4E4DD79270D25D500C1347B /* Build configuration list for PBXProject "HogwartsApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4E4DD75270D25D500C1347B;
+			productRefGroup = B4E4DD7F270D25D500C1347B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4E4DD7D270D25D500C1347B /* HogwartsApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4E4DD7C270D25D500C1347B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4EE2D3A2714A560003C8D61 /* Hat.storyboard in Resources */,
+				B4E4DD8E270D25D800C1347B /* LaunchScreen.storyboard in Resources */,
+				B4EE2D582714C18F003C8D61 /* UserSettings.storyboard in Resources */,
+				B4EE2D362714A1B9003C8D61 /* Beasts.storyboard in Resources */,
+				B4EE2D692714D9C8003C8D61 /* BeastTableCell.xib in Resources */,
+				B45D30CE2713B77900DF2EA3 /* User.storyboard in Resources */,
+				B430166C2720829900B7C199 /* HeaderView.xib in Resources */,
+				B4E4DDA9270D35B300C1347B /* ButtonCollectionCell.xib in Resources */,
+				B4E4DD8B270D25D800C1347B /* Assets.xcassets in Resources */,
+				B430166A272080FC00B7C199 /* ContentTableCell.xib in Resources */,
+				B4EE2D3427149EC7003C8D61 /* Characters.storyboard in Resources */,
+				B430165E2720614000B7C199 /* ButtonTableCell.xib in Resources */,
+				B4EE2D402714A6EE003C8D61 /* Personagens.json in Resources */,
+				B4E4DD89270D25D500C1347B /* Main.storyboard in Resources */,
+				B4EE2D422714A6F6003C8D61 /* Beasts.json in Resources */,
+				B4EE2D382714A20D003C8D61 /* Quiz.storyboard in Resources */,
+				B4EE2D652714D9A9003C8D61 /* CharactersTableCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4E4DD7A270D25D500C1347B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4301669272080FC00B7C199 /* ContentTableCell.swift in Sources */,
+				B4EE2D612714CE0E003C8D61 /* LoginViewController.swift in Sources */,
+				B4EE2D3E2714A6E0003C8D61 /* Character.swift in Sources */,
+				B4EE2D542714A815003C8D61 /* MainViewController.swift in Sources */,
+				B4EE2D482714A743003C8D61 /* CharactersController.swift in Sources */,
+				B4EE2D632714D4D6003C8D61 /* PasswordRecoveryViewController.swift in Sources */,
+				B4EE2D5D2714C8AB003C8D61 /* defaultLinks.swift in Sources */,
+				B4E4DD86270D25D500C1347B /* HomeViewController.swift in Sources */,
+				B430166327206FD200B7C199 /* EmailEditorViewController.swift in Sources */,
+				B4163A4C271CB02900B6C89E /* BeastsViewController.swift in Sources */,
+				B4EE2D6D2714DB58003C8D61 /* QuizViewController.swift in Sources */,
+				B4EE2D462714A73C003C8D61 /* BeastsController.swift in Sources */,
+				B4EE2D3C2714A6C1003C8D61 /* Beasts.swift in Sources */,
+				B4EE2D6B2714D9CF003C8D61 /* BeastTableCell.swift in Sources */,
+				B4EE2D5F2714CE00003C8D61 /* CreateAccountViewController.swift in Sources */,
+				B430166527206FF400B7C199 /* PasswordEditorViewController.swift in Sources */,
+				B4EE2D6F2714DB61003C8D61 /* QuestionsViewController.swift in Sources */,
+				B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */,
+				B4E4DDA1270D30F300C1347B /* UITextFieldHelper.swift in Sources */,
+				B4EE2D712714DF73003C8D61 /* HatViewController.swift in Sources */,
+				B4EE2D442714A732003C8D61 /* MainController.swift in Sources */,
+				B4163A4E271CB03100B6C89E /* BeastsDetailViewController.swift in Sources */,
+				B4EE2D5B2714C5CA003C8D61 /* SettingsViewController.swift in Sources */,
+				B430166E272083A500B7C199 /* HeaderView.swift in Sources */,
+				B430166127206FAD00B7C199 /* PersonalDataViewController.swift in Sources */,
+				B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */,
+				B4E4DD9D270D30D400C1347B /* GradientView.swift in Sources */,
+				B4EE2D562714A92E003C8D61 /* MyFavoritesViewController.swift in Sources */,
+				B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */,
+				B4EE2D672714D9B2003C8D61 /* CharactersTableCell.swift in Sources */,
+				B4E4DD9F270D30E800C1347B /* ButtonGradient.swift in Sources */,
+				B4E4DD84270D25D500C1347B /* SceneDelegate.swift in Sources */,
+				B4E4DDA7270D35AA00C1347B /* ButtonCollectionCell.swift in Sources */,
+				B430165D2720614000B7C199 /* ButtonTableCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B4E4DD87270D25D500C1347B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4E4DD88270D25D500C1347B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B4E4DD8C270D25D800C1347B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4E4DD8D270D25D800C1347B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4E4DD90270D25D800C1347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4E4DD91270D25D800C1347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4E4DD93270D25D800C1347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS322S4GSA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HogwartsApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = User;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DigitalHouse.HogwartsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B4E4DD94270D25D800C1347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS322S4GSA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HogwartsApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = User;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DigitalHouse.HogwartsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4E4DD79270D25D500C1347B /* Build configuration list for PBXProject "HogwartsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E4DD90270D25D800C1347B /* Debug */,
+				B4E4DD91270D25D800C1347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4E4DD92270D25D800C1347B /* Build configuration list for PBXNativeTarget "HogwartsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4E4DD93270D25D800C1347B /* Debug */,
+				B4E4DD94270D25D800C1347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4E4DD76270D25D500C1347B /* Project object */;
+}
