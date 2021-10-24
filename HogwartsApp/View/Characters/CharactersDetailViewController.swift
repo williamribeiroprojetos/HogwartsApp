@@ -10,7 +10,6 @@ import UIKit
 class CharactersDetailViewController: UIViewController {
     
     @IBOutlet weak var viewMain: GradientView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var saveFavoriteButton: UIButton!
@@ -24,11 +23,6 @@ class CharactersDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         saveFavoriteButton.layer.cornerRadius = saveFavoriteButton.frame.height / 2
         characterImage.layer.cornerRadius = 5
-    }
-    
-    @IBAction func tappedCloseButton(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tappedSaveFavoriteButton(_ sender: UIButton) {

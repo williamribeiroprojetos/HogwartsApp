@@ -27,7 +27,7 @@ class BeastsDetailViewController: UIViewController {
     
     func setup(value: Beasts) {
         self.beastImageView?.image = UIImage(named: value.avatar ?? "")
-        self.descriptionLabel?.text = " Nome: \(value.name ?? "") \n Característias: \(value.characteristics ?? "")"
+        self.descriptionLabel?.text = " Nome: \(value.name) \n Característias: \(value.characteristics)"
         title = value.name
     }
     
