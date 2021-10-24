@@ -61,103 +61,113 @@
             <point key="canvasLocation" x="-12" y="46"/>
         </scene>
         <!--Characters Detail View Controller-->
-        <scene sceneID="gzN-Wa-Hrv">
+        <scene sceneID="Je1-oj-g6L">
             <objects>
-                <viewController storyboardIdentifier="CharactersDetailViewController" id="fYG-ja-C5W" customClass="CharactersDetailViewController" customModule="HogwartsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ngF-pv-IFd">
+                <viewController storyboardIdentifier="CharactersDetailViewController" id="Qps-cQ-Du6" customClass="CharactersDetailViewController" customModule="HogwartsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pBF-zn-SY3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxR-z9-uv9" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncZ-nd-lwA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDW-4B-2su">
-                                        <rect key="frame" x="20" y="110" width="374" height="220"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzS-1w-AOv" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="42" width="414" height="1000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-yJ-e5w">
+                                                <rect key="frame" x="20" y="405" width="374" height="330"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="330" id="9cb-9V-1ZO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9L-dj-GOo">
+                                                <rect key="frame" x="40" y="103" width="334" height="242"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="242" id="tL8-0V-fXG"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-nR-G4G" customClass="ButtonGradient" customModule="HogwartsApp" customModuleProvider="target">
+                                                <rect key="frame" x="6" y="912" width="402" height="48"/>
+                                                <color key="backgroundColor" red="0.6625953913" green="0.50837218760000003" blue="0.24552798270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="JM0-Fx-Fpc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                                <state key="normal" title="Favoritar">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                        <color key="value" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                        <color key="value" red="1" green="0.76416509929999998" blue="0.36918386669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedSaveFavoriteButton:" destination="Qps-cQ-Du6" eventType="touchUpInside" id="N0j-zE-eih"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="220" id="YZu-QE-4W9"/>
+                                            <constraint firstAttribute="width" constant="414" id="6Wg-J4-gjr"/>
+                                            <constraint firstItem="Hud-yJ-e5w" firstAttribute="top" secondItem="u9L-dj-GOo" secondAttribute="bottom" constant="60" id="CQX-TU-O1F"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="800" id="FqL-47-2zJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Teg-nR-G4G" secondAttribute="bottom" constant="40" id="G8q-J8-dPv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Teg-nR-G4G" secondAttribute="trailing" constant="6" id="TQY-ev-Uxd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hud-yJ-e5w" secondAttribute="trailing" constant="20" id="UWg-Vq-Zgu"/>
+                                            <constraint firstItem="Hud-yJ-e5w" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="20" id="Vdw-qB-3hQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="u9L-dj-GOo" secondAttribute="trailing" constant="40" id="WPt-DH-p9f"/>
+                                            <constraint firstItem="u9L-dj-GOo" firstAttribute="top" secondItem="BzS-1w-AOv" secondAttribute="top" constant="103" id="WuQ-H7-3WB"/>
+                                            <constraint firstItem="u9L-dj-GOo" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="40" id="e92-c4-7la"/>
+                                            <constraint firstItem="Teg-nR-G4G" firstAttribute="top" secondItem="Hud-yJ-e5w" secondAttribute="bottom" constant="177" id="l5h-Ju-hEb"/>
+                                            <constraint firstItem="Teg-nR-G4G" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="6" id="nfP-Bz-NB8"/>
                                         </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTu-5I-jAN" customClass="ButtonGradient" customModule="HogwartsApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="774" width="374" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="jsz-U0-Fa5"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="FAVORITAR">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="1" green="0.76416509929999998" blue="0.36918386669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.073130656759999996" green="0.073130656759999996" blue="0.073130656759999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tappedSaveFavoriteButton:" destination="fYG-ja-C5W" eventType="touchUpInside" id="lYo-u4-Wd7"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAT-E5-Yam">
-                                        <rect key="frame" x="20" y="360" width="374" height="327"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="327" id="MO0-6c-3Rn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qTu-5I-jAN" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="3aD-d1-Q9u"/>
-                                    <constraint firstAttribute="bottom" secondItem="qTu-5I-jAN" secondAttribute="bottom" constant="40" id="KHY-Im-b9V"/>
-                                    <constraint firstAttribute="trailing" secondItem="RDW-4B-2su" secondAttribute="trailing" constant="20" id="UYP-H0-3Md"/>
-                                    <constraint firstItem="qTu-5I-jAN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hAT-E5-Yam" secondAttribute="bottom" constant="40" id="ZJh-Lk-PJC"/>
-                                    <constraint firstItem="RDW-4B-2su" firstAttribute="top" secondItem="bxR-z9-uv9" secondAttribute="top" constant="110" id="aOT-2z-uU8"/>
-                                    <constraint firstItem="hAT-E5-Yam" firstAttribute="top" secondItem="RDW-4B-2su" secondAttribute="bottom" constant="30" id="l1I-xd-EhJ"/>
-                                    <constraint firstItem="hAT-E5-Yam" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="lll-0H-FqZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="hAT-E5-Yam" secondAttribute="trailing" constant="20" id="mZc-uE-dJA"/>
-                                    <constraint firstAttribute="trailing" secondItem="qTu-5I-jAN" secondAttribute="trailing" constant="20" id="oWb-Gk-l5n"/>
-                                    <constraint firstItem="RDW-4B-2su" firstAttribute="leading" secondItem="bxR-z9-uv9" secondAttribute="leading" constant="20" id="qNW-Qu-OTt"/>
+                                    <constraint firstItem="BzS-1w-AOv" firstAttribute="top" secondItem="ncZ-nd-lwA" secondAttribute="top" constant="42" id="9hd-Ff-bSX"/>
+                                    <constraint firstAttribute="trailing" secondItem="BzS-1w-AOv" secondAttribute="trailing" id="bhv-gg-tBZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="BzS-1w-AOv" secondAttribute="bottom" constant="42" id="svS-g2-J6H"/>
+                                    <constraint firstItem="BzS-1w-AOv" firstAttribute="leading" secondItem="ncZ-nd-lwA" secondAttribute="leading" id="t2f-py-Wrx"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.156344384" green="0.1723165512" blue="0.1889835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="DHg-Oc-w2i"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4We-Ra-jbj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bxR-z9-uv9" firstAttribute="leading" secondItem="DHg-Oc-w2i" secondAttribute="leading" id="I1a-0C-154"/>
-                            <constraint firstItem="DHg-Oc-w2i" firstAttribute="bottom" secondItem="bxR-z9-uv9" secondAttribute="bottom" id="NLp-AM-c1m"/>
-                            <constraint firstItem="bxR-z9-uv9" firstAttribute="trailing" secondItem="DHg-Oc-w2i" secondAttribute="trailing" id="cWO-WT-evC"/>
-                            <constraint firstItem="bxR-z9-uv9" firstAttribute="top" secondItem="ngF-pv-IFd" secondAttribute="top" id="p6M-pS-87s"/>
+                            <constraint firstItem="ncZ-nd-lwA" firstAttribute="top" secondItem="pBF-zn-SY3" secondAttribute="top" id="1kV-IY-Y9p"/>
+                            <constraint firstAttribute="bottom" secondItem="ncZ-nd-lwA" secondAttribute="bottom" id="r4f-2k-gqj"/>
+                            <constraint firstItem="BzS-1w-AOv" firstAttribute="width" secondItem="pBF-zn-SY3" secondAttribute="width" id="rJR-bM-Wpv"/>
+                            <constraint firstItem="ncZ-nd-lwA" firstAttribute="trailing" secondItem="4We-Ra-jbj" secondAttribute="trailing" id="tf7-pW-Aj3"/>
+                            <constraint firstItem="ncZ-nd-lwA" firstAttribute="leading" secondItem="4We-Ra-jbj" secondAttribute="leading" id="x1u-Lo-KVa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="characterImage" destination="RDW-4B-2su" id="zzH-XC-AOA"/>
-                        <outlet property="descriptionLabel" destination="hAT-E5-Yam" id="eFs-8G-xzY"/>
-                        <outlet property="saveFavoriteButton" destination="qTu-5I-jAN" id="O1M-zM-X3t"/>
-                        <outlet property="viewMain" destination="bxR-z9-uv9" id="Gi0-fC-DdW"/>
+                        <outlet property="characterImage" destination="u9L-dj-GOo" id="1JY-rP-CBx"/>
+                        <outlet property="descriptionLabel" destination="Hud-yJ-e5w" id="L3N-Jx-0ef"/>
+                        <outlet property="saveFavoriteButton" destination="Teg-nR-G4G" id="aen-Zm-8qH"/>
+                        <outlet property="viewMain" destination="BzS-1w-AOv" id="qBF-dG-ffj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TJD-Yb-dEz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8d-NI-kWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779.71014492753625" y="45.535714285714285"/>
+            <point key="canvasLocation" x="730" y="46"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="qTu-5I-jAN">
-            <size key="intrinsicContentSize" width="101" height="36"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
