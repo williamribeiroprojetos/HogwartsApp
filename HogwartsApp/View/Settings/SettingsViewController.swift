@@ -30,6 +30,7 @@ class SettingsViewController: UIViewController {
         settingsTableView.dataSource = self
         settingsTableView.frame = view.bounds
         settingsTableView.register(UINib(nibName: "ButtonTableCell", bundle: nil), forCellReuseIdentifier: "ButtonTableCell")
+        setupUserInfo()
     }
 
     @IBAction func tappedChangeProfileImageButton(_ sender: UIButton) {
@@ -63,6 +64,27 @@ class SettingsViewController: UIViewController {
         vc.definesPresentationContext = true
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
+    }
+    
+    func setupUserInfo() {
+        let user = Auth.auth().currentUser
+        if let user = user {
+          // The user's ID, unique to the Firebase project.
+          // Do NOT use this value to authenticate with your backend server,
+          // if you have one. Use getTokenWithCompletion:completion: instead.
+          let uid = user.uid
+          let email = user.email
+          let photoURL = user.photoURL
+          var multiFactorString = "MultiFactor: "
+            
+          for info in user.multiFactor.enrolledFactors {
+            multiFactorString += info.displayName ?? "[DispayName]"
+            multiFactorString += " "
+          }
+          
+            self.nameLabel.text = user.displayName
+            self.profileImageView.image = UIImage(named: "\(String(describing: photoURL))")
+        }
     }
 }
 
