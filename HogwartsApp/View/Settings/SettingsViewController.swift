@@ -67,6 +67,11 @@ class SettingsViewController: UIViewController {
     }
     
     func setupUserInfo() {
+        let userInfo = Auth.auth().currentUser?.providerData[indexPath.row]
+        nameLabel.text = userInfo?.providerID
+        // Provider-specific UID
+        cell?.detailTextLabel?.text = userInfo?.uid
+        
         let user = Auth.auth().currentUser
         if let user = user {
           // The user's ID, unique to the Firebase project.
@@ -82,8 +87,23 @@ class SettingsViewController: UIViewController {
             multiFactorString += " "
           }
           
-            self.nameLabel.text = user.displayName
-            self.profileImageView.image = UIImage(named: "\(String(describing: photoURL))")
+            if user != nil {
+                let name = user.displayName?.split(separator: " ")
+                nameLabel.text = "\(name?[0] ?? "")"
+                
+//                if (user.photoURL == nil) {
+//                    let url = URL(string: "\(user.photoURL)")
+//                    photoURL.contentMode = .scaleAspectFill
+//                    photoURL?.provideImageData(<#T##void#>, bytesPerRow: <#T##Int#>, origin: <#T##Int#>, size: <#T##Int#>, userInfo: <#T##Any?#>)
+//                    imgProfile.kf.setImage(with: url,
+//                                           placeholder: UIImage(named: "profile_icon"),
+//                                           options: [
+//                                            .scaleFactor(UIScreen.main.scale),
+//                                            .transition(.fade(1)),
+//                                            .cacheOriginalImage
+//                                           ]
+//                    )
+            }
         }
     }
 }

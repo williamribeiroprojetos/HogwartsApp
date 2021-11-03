@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DEV-kO-yH3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DEV-kO-yH3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,10 +14,11 @@
         <scene sceneID="Fp3-Sh-BGa">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" id="DEV-kO-yH3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y47-WJ-0yj">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y47-WJ-0yj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.156344384" green="0.1723165512" blue="0.1889835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.156344384" green="0.1723165512" blue="0.1889835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.156344384" green="0.1723165512" blue="0.1889835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -33,7 +34,7 @@
         <!--HOME-->
         <scene sceneID="IiB-O4-tWB">
             <objects>
-                <navigationController toolbarHidden="NO" id="j7z-lF-ANP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="j7z-lF-ANP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" id="wDF-vP-kbk">
                         <imageReference key="image" image="house" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                             <hierarchicalColors>
@@ -42,6 +43,7 @@
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>
                         </imageReference>
+                        <color key="badgeColor" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                             <hierarchicalColors>
                                 <color red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,6 +52,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="WAT-tt-84t">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,7 +63,6 @@
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZXg-m6-cKx">
-                        <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -80,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iFY-aa-oNR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s2c-CH-E5e">
                                     <size key="itemSize" width="414" height="150"/>
@@ -89,7 +91,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <view key="backgroundView" contentMode="scaleToFill" id="YlA-0b-jVU" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <userDefinedRuntimeAttributes>
@@ -135,7 +137,7 @@
         <!--MEUS FAVORITOS-->
         <scene sceneID="gXg-Oi-wGL">
             <objects>
-                <navigationController toolbarHidden="NO" id="rhJ-IZ-ttu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="rhJ-IZ-ttu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MEUS FAVORITOS" id="Bn5-jG-8fn">
                         <imageReference key="image" image="bookmark" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                             <hierarchicalColors>
@@ -144,6 +146,7 @@
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>
                         </imageReference>
+                        <color key="badgeColor" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageReference key="selectedImage" image="bookmark.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                             <hierarchicalColors>
                                 <color red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,6 +155,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="rKa-lb-jFI">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,7 +165,6 @@
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gQt-Nk-jq0">
-                        <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -181,10 +184,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgv-rA-RAQ" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-9k-pDg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>

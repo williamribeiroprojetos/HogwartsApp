@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -64,14 +64,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnx-D4-Nep">
                                         <rect key="frame" x="0.0" y="165" width="414" height="75"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hufllepuff" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-ON-cCO">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-ON-cCO">
                                                 <rect key="frame" x="10" y="0.0" width="90" height="75"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="4qW-CH-d4h"/>
                                                     <constraint firstAttribute="height" constant="75" id="ML3-kG-28O"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUFLLEPUFF" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8M-WJ-9Gq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8M-WJ-9Gq">
                                                 <rect key="frame" x="120" y="12" width="284" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="jEa-1t-am8"/>
@@ -81,7 +81,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.76416509929999998" blue="0.36918386669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.54608863780000005" green="0.41730187810000002" blue="0.20160711479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="r8M-WJ-9Gq" firstAttribute="leading" secondItem="J4k-ON-cCO" secondAttribute="trailing" constant="20" id="6lh-sT-dKh"/>
                                             <constraint firstItem="J4k-ON-cCO" firstAttribute="leading" secondItem="mnx-D4-Nep" secondAttribute="leading" constant="10" id="GAE-2d-XMo"/>
@@ -800,6 +800,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="1Ou-EQ-wAN">
+            <size key="intrinsicContentSize" width="170" height="39"/>
+        </designable>
         <designable name="4j6-zZ-2PA">
             <size key="intrinsicContentSize" width="170" height="39"/>
         </designable>
@@ -813,7 +816,7 @@
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="eye.slash.fill" catalog="system" width="128" height="82"/>
-        <image name="hufllepuff" width="308.5" height="384"/>
+        <image name="logo" width="200" height="200"/>
         <image name="profile_icon" width="256" height="256"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="secondaryLabelColor">

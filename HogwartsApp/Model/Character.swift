@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Model
-struct Character: Decodable {
+struct Character: Codable {
     let name: String
     let species: String
     let gender: String
@@ -28,7 +28,7 @@ struct Character: Decodable {
 }
 
 // MARK: - Wand
-struct Wand: Decodable {
+struct Wand: Codable {
     let wood, core: String
     let length: Length
 }
