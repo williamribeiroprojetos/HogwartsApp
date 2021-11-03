@@ -67,10 +67,10 @@ class SettingsViewController: UIViewController {
     }
     
     func setupUserInfo() {
-        let userInfo = Auth.auth().currentUser?.providerData[indexPath.row]
-        nameLabel.text = userInfo?.providerID
-        // Provider-specific UID
-        cell?.detailTextLabel?.text = userInfo?.uid
+//        let userInfo = Auth.auth().currentUser?.providerData[indexPath.row]
+//        nameLabel.text = userInfo?.providerID
+//        // Provider-specific UID
+//        cell?.detailTextLabel?.text = userInfo?.uid
         
         let user = Auth.auth().currentUser
         if let user = user {

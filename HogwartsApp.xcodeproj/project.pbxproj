@@ -25,6 +25,9 @@
 		B430166E272083A500B7C199 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430166D272083A500B7C199 /* HeaderView.swift */; };
 		B43FE70C2724A38600FDE5FE /* QuizHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FE70B2724A38600FDE5FE /* QuizHelper.swift */; };
 		B45D30CE2713B77900DF2EA3 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45D30CD2713B77900DF2EA3 /* User.storyboard */; };
+		B4CB3FD3273344DC00581DA8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD2273344DC00581DA8 /* UserManager.swift */; };
+		B4CB3FD62733470C00581DA8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */; };
+		B4CB3FD82733478F00581DA8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD72733478F00581DA8 /* FirebaseUser.swift */; };
 		B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD81270D25D500C1347B /* AppDelegate.swift */; };
 		B4E4DD84270D25D500C1347B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD83270D25D500C1347B /* SceneDelegate.swift */; };
 		B4E4DD86270D25D500C1347B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD85270D25D500C1347B /* HomeViewController.swift */; };
@@ -83,6 +86,9 @@
 		B430166D272083A500B7C199 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B43FE70B2724A38600FDE5FE /* QuizHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHelper.swift; sourceTree = "<group>"; };
 		B45D30CD2713B77900DF2EA3 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		B4CB3FD2273344DC00581DA8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		B4CB3FD72733478F00581DA8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		B4E4DD7E270D25D500C1347B /* HogwartsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HogwartsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E4DD81270D25D500C1347B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E4DD83270D25D500C1347B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +180,15 @@
 			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		B4CB3FD4273346E900581DA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B4CB3FD2273344DC00581DA8 /* UserManager.swift */,
+				B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		B4E4DD75270D25D500C1347B = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +210,7 @@
 		B4E4DD80270D25D500C1347B /* HogwartsApp */ = {
 			isa = PBXGroup;
 			children = (
+				B4CB3FD4273346E900581DA8 /* Service */,
 				B4E4DD99270D2FEB00C1347B /* Mock */,
 				B4E4DD98270D2FDD00C1347B /* Model */,
 				B4E4DD97270D2FD400C1347B /* View */,
@@ -256,6 +272,7 @@
 			children = (
 				B4EE2D3B2714A6C1003C8D61 /* Beasts.swift */,
 				B4EE2D3D2714A6E0003C8D61 /* Character.swift */,
+				B4CB3FD72733478F00581DA8 /* FirebaseUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,7 +580,9 @@
 				B4EE2D5F2714CE00003C8D61 /* CreateAccountViewController.swift in Sources */,
 				B430166527206FF400B7C199 /* PasswordEditorViewController.swift in Sources */,
 				B4EE2D6F2714DB61003C8D61 /* QuestionsViewController.swift in Sources */,
+				B4CB3FD62733470C00581DA8 /* FirebaseUser.swift in Sources */,
 				B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */,
+				B4CB3FD3273344DC00581DA8 /* UserManager.swift in Sources */,
 				B4E4DDA1270D30F300C1347B /* UITextFieldHelper.swift in Sources */,
 				B4EE2D712714DF73003C8D61 /* HatViewController.swift in Sources */,
 				B416E3DF272493D40076DF66 /* Alert.swift in Sources */,
@@ -579,6 +598,7 @@
 				B4EE2D672714D9B2003C8D61 /* CharactersTableCell.swift in Sources */,
 				B4E4DD9F270D30E800C1347B /* ButtonGradient.swift in Sources */,
 				B4E4DD84270D25D500C1347B /* SceneDelegate.swift in Sources */,
+				B4CB3FD82733478F00581DA8 /* FirebaseUser.swift in Sources */,
 				B4E4DDA7270D35AA00C1347B /* ButtonCollectionCell.swift in Sources */,
 				B430165D2720614000B7C199 /* ButtonTableCell.swift in Sources */,
 			);
