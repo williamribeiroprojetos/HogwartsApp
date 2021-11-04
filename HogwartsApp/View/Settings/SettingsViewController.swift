@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
     
     fileprivate func continueToLogin() {
         let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         vc.providesPresentationContextTransitionStyle = true
         vc.definesPresentationContext = true
         vc.modalPresentationStyle = .fullScreen

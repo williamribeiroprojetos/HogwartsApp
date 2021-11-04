@@ -124,7 +124,6 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func tappedSignInButton(_ sender: Any) {
-//        self.continueToHome()
         if validateForm() == true {
             do {
                 let email = emailTextField.text ?? ""
@@ -153,12 +152,25 @@ class CreateAccountViewController: UIViewController {
         
         let action = UIAlertAction(title: "Continuar", style: .default) { _ in
             
+            let name = self.nameTextField.text ?? ""
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
                 guard let strongSelf = self else {
                     return
             }
-                guard error == nil else {
+                guard error == nil && result != nil else {
                     print("Usuário criado no Firebase")
+                    
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = name
+                    
+                    changeRequest?.commitChanges(completion: { error in
+                        if error == nil {
+                            print("User name saved")
+                            self?.dismiss(animated: false, completion: nil)
+                        } else {
+                            print("Erro: \(error?.localizedDescription)")
+                        }
+                    })
                     return
                 }
                 strongSelf.continueToHome()

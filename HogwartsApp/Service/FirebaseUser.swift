@@ -10,8 +10,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol FirebaseUserRepositoring {
-    func saveFeedback(id: String, data: FirebaseUser)
-    func readFeedback(idFather: String, completion: @escaping ((Result<[FirebaseUser], Error>)->Void))
+    func saveUser(id: String, data: SaveUserFirebase)
+    func readUser(email: String, completion: @escaping ((Result<[SaveUserFirebase], Error>)->Void))
 }
 
 class FirebaseUser: FirebaseUserRepositoring {
@@ -24,13 +24,13 @@ class FirebaseUser: FirebaseUserRepositoring {
 
     private let database = Firestore.firestore()
     private lazy var referenceUser: DocumentReference? = {
-        let usersCollectionReference = database.collection("userPreference")
+        let usersCollectionReference = database.collection("UserData")
         guard let id = userManager.id else { return nil }
         return usersCollectionReference.document(id)
     }()
     
-    func saveFeedback(id: String, data: FirebaseUser) {
-        guard let idReference = referenceUser?.collection("UserData"), !id.isEmpty else {
+    func saveUser(id: String, data: SaveUserFirebase) {
+        guard let idReference = referenceUser?.collection("User"), !id.isEmpty else {
             return
         }
         do {
@@ -40,14 +40,14 @@ class FirebaseUser: FirebaseUserRepositoring {
         }
     }
     
-    func readFeedback(email: String, completion: @escaping ((Result<[FirebaseUser], Error>) -> Void)) {
-        var feedbackItems: [FirebaseUser] = []
-        guard let idReference = referenceUser?.collection("feedback") else {
+    func readUser(email: String, completion: @escaping ((Result<[SaveUserFirebase], Error>) -> Void)) {
+        var userDataItems: [SaveUserFirebase] = []
+        guard let idReference = referenceUser?.collection("User") else {
             return
         }
         idReference.whereField("email", isEqualTo: email).getDocuments { querySnapshot, error in
             if error != nil {
-                print("Error Reading Firebase: \(error ?? "")")
+                print("Error Reading Firebase: \(error)")
                 completion(.failure((ServiceError.failureReading)))
                 return
             }
@@ -56,11 +56,11 @@ class FirebaseUser: FirebaseUserRepositoring {
                 return
             }
             
-            feedbackItems = snapshot.documents.compactMap { document in
-                let feedbackFirebase = try? document.data(as: FirebaseUser.self)
-                return feedbackFirebase
+            userDataItems = snapshot.documents.compactMap { document in
+                let userFirebase = try? document.data(as: SaveUserFirebase.self)
+                return userFirebase
             }
-            completion(.success(feedbackItems))
+            completion(.success(userDataItems))
         }
     }
 }

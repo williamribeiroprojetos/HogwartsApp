@@ -11,11 +11,27 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let authListener = Auth.auth().addStateDidChangeListener { auth, user in
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let userStoryboard = UIStoryboard(name: "User", bundle: nil)
+            
+            if user != nil {
+                let mainTabBarController = mainStoryboard.instantiateViewController(identifier: "MainTabBarController")
+                self.window?.rootViewController = mainTabBarController
+                self.window?.makeKeyAndVisible()
+            } else {
+                let home = userStoryboard.instantiateViewController(identifier: "MainViewController")
+                self.window?.rootViewController = home
+                self.window?.makeKeyAndVisible()
+            }
+        }
         return true
     }
 
@@ -32,7 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+     var window: UIWindow?
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        // change the root view controller to your specific view controller
+        window.rootViewController = vc
+    }
+}

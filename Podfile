@@ -21,6 +21,8 @@ target 'HogwartsApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage' 
   
   #Alamofire
   pod 'Alamofire', '~> 5.2'
