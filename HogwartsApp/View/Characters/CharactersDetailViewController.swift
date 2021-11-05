@@ -16,6 +16,7 @@ class CharactersDetailViewController: UIViewController {
     
     var imageURL: String = ""
     var name: String = ""
+    var character: Character?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +24,22 @@ class CharactersDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         saveFavoriteButton.layer.cornerRadius = saveFavoriteButton.frame.height / 2
         characterImage.layer.cornerRadius = 5
+        setup()
     }
     
     @IBAction func tappedSaveFavoriteButton(_ sender: UIButton) {
         
     }
     
-    func setup(value: Character) {
+    func setup() {
+        guard let value = character else {
+            return
+        }
+
         let varinha: String = value.wand.wood
         title = value.name
-        self.descriptionLabel?.text = " Espécie: \(value.species) \n Gênero: \(value.gender)\n Data de nascimento: \(value.dateOfBirth) \n Casa: \(value.house)\n Ancestralidade: \(value.ancestry) \n Cor dos olhos: \(value.eyeColour) \n Cor dos cabelos: \(value.hairColour) \n Patrono: \(value.patronus) \n Varinha: \(varinha) \n Ator: \(value.actor)"
-        self.characterImage?.downloaded(from: value.image)
+        self.descriptionLabel.text = " Espécie: \(value.species) \n Gênero: \(value.gender)\n Data de nascimento: \(value.dateOfBirth) \n Casa: \(value.house)\n Ancestralidade: \(value.ancestry) \n Cor dos olhos: \(value.eyeColour) \n Cor dos cabelos: \(value.hairColour) \n Patrono: \(value.patronus) \n Varinha: \(varinha) \n Ator: \(value.actor)"
+        self.characterImage.downloaded(from: value.image)
     }
     
     private func loadImageView() {

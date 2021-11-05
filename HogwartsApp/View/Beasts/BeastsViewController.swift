@@ -48,7 +48,7 @@ extension BeastsViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Beasts", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "BeastsDetailViewController") as!
         BeastsDetailViewController
-        vc.setup(value: self.controller.loadCurrentBeast(indexPath: indexPath))
+        vc.beasts = self.controller.loadCurrentBeast(indexPath: indexPath)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -47,7 +47,7 @@ class FirebaseUser: FirebaseUserRepositoring {
         }
         idReference.whereField("email", isEqualTo: email).getDocuments { querySnapshot, error in
             if error != nil {
-                print("Error Reading Firebase: \(error)")
+                print("Error Reading Firebase: \(String(describing: error))")
                 completion(.failure((ServiceError.failureReading)))
                 return
             }

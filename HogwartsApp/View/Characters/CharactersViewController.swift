@@ -55,7 +55,7 @@ extension CharactersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Characters", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CharactersDetailViewController") as! CharactersDetailViewController
-        vc.setup(value: self.controller.loadCurrentCharacter(indexPath: indexPath))
+        vc.character = self.controller.loadCurrentCharacter(indexPath: indexPath)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
