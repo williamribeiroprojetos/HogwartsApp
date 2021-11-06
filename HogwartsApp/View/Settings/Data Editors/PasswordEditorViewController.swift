@@ -10,45 +10,114 @@ import UIKit
 class PasswordEditorViewController: UIViewController {
     
     @IBOutlet weak var viewMain: GradientView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var oldPasswordTextField: UITextField!
-    @IBOutlet weak var oldPasswordShowButton: UIButton!
-    @IBOutlet weak var newPasswordTextField: UITextField!
-    @IBOutlet weak var newPasswordShowButton: UIButton!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordShowButton: UIButton!
-    @IBOutlet weak var saveButton: ButtonGradient!
+    @IBOutlet weak var viewSuccess: UIView!
+    @IBOutlet weak var confirmationEmailLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var changePasswordButton: ButtonGradient!
     
+    var email = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupView()
-    }
-    
-    func setupView() {
-        errorLabel.isHidden = true
-        saveButton.layer.cornerRadius = saveButton.layer.frame.height / 2
-        saveButton.layer.borderWidth = 1
-        oldPasswordTextField.setEditingColor()
-        newPasswordTextField.setEditingColor()
-        confirmPasswordTextField.setEditingColor()
     }
 
     @IBAction func closeButton(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-    
-    @IBAction func tappedShowOldPassword(_ sender: UIButton) {
-    }
-    
-    @IBAction func tappedShowNewPassword(_ sender: UIButton) {
-    }
-    
-    @IBAction func tappedShowConfirmPassword(_ sender: UIButton) {
-    }
 
-    @IBAction func tappedSaveButton(_ sender: UIButton) {
+    @IBAction func tappedChangePasswordButton(_ sender: UIButton) {
+        if validateForm() {
+            self.view.endEditing(true)
+            let emailUser = emailTextField.text!.trimmingCharacters(in: .whitespaces)
+            
+            let parameters = [
+                "email": emailUser
+            ]
+            
+//              let network = Network(self)
+//              network.resetPassword(self, parameters: parameters) { (success) in
+//                  if success {
+//                      self.view.hideLoadingIndicator()
+//                      self.emailTextfield.isHidden = true
+//                      self.textLabel.isHidden = true
+//                      self.viewSuccess.isHidden = false
+//                      self.emailLabel.text = self.emailTextfield.text?.trimmingCharacters(in: .whitespaces)
+//                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
+//                  }
+//              }
+        }
+    }
+    
+    fileprivate func validateForm() -> Bool {
+        let status = emailTextField.text!.isEmpty ||
+            !emailTextField.text!.contains(".") ||
+            !emailTextField.text!.contains("@") ||
+        emailTextField.text!.count <= 5
+        
+        if status {
+            emailTextField.setErrorColor()
+            infoLabel.textColor = .systemRed
+            infoLabel.text = "Verifique o e-mail informado"
+            return false
+        }
+        
+        return true
+    }
+}
+
+extension PasswordEditorViewController {
+    
+    fileprivate func setupView() {
+        changePasswordButton.layer.cornerRadius = changePasswordButton.bounds.height / 2
+        
+        emailTextField.setEditingColor()
+        
+        if !email.isEmpty {
+            emailTextField.text = email
+            emailTextField.isEnabled = false
+        }
+        validateButton()
+    }
+    
+    @IBAction func emailBeginEditing(_ sender: Any) {
+        emailTextField.setEditingColor()
+        infoLabel.textColor = .gray
+        infoLabel.text = "Informe o e-mail associado à sua conta"
+    }
+    
+    @IBAction func emailEditing(_ sender: Any) {
+        emailTextField.setEditingColor()
+        
+        infoLabel.textColor = .gray
+        infoLabel.text = "Informe o e-mail associado à sua conta"
+        
+        validateButton()
+    }
+    
+    @IBAction func emailEndEditing(_ sender: Any) {
+        emailTextField.setEditingColor()
+    }
+    
+    fileprivate func validateButton() {
+        if !emailTextField.text!.isEmpty {
+            enableCreateButton()
+        } else {
+            disableCreateButton()
+        }
+    }
+    
+    fileprivate func disableCreateButton() {
+        changePasswordButton.backgroundColor = .gray
+        changePasswordButton.setTitleColor(.black, for: .normal)
+        changePasswordButton.isEnabled = false
+    }
+    
+    fileprivate func enableCreateButton() {
+        changePasswordButton.setTitleColor(.white, for: .normal)
+        changePasswordButton.isEnabled = true
     }
 }

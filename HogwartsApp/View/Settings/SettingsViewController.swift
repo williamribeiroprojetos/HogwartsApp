@@ -19,7 +19,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var settingsTableView: UITableView!
     
-    var buttonName = ["Dados Pessoais", "E-mail e Senha", "Sair"]
+    var imagePicker: UIImagePickerController!
+    var buttonName = ["Dados Pessoais", "E-mail", "Senha", "Sair"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,23 @@ class SettingsViewController: UIViewController {
         settingsTableView.register(UINib(nibName: "ButtonTableCell", bundle: nil), forCellReuseIdentifier: "ButtonTableCell")
         setupUserInfo()
     }
+    
+    @objc func openImagePicker(_ sender:Any) {
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 
     @IBAction func tappedChangeProfileImageButton(_ sender: UIButton) {
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(imageTap)
+        profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
+        profileImageView.clipsToBounds = true
         
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
     }
     
     private func alertLogOut() {
@@ -67,47 +82,30 @@ class SettingsViewController: UIViewController {
     }
     
     func setupUserInfo() {
-//        let userInfo = Auth.auth().currentUser?.providerData[indexPath.row]
-//        nameLabel.text = userInfo?.providerID
-//        // Provider-specific UID
-//        cell?.detailTextLabel?.text = userInfo?.uid
         
-        let user = Auth.auth().currentUser
-        if let user = user {
-          // The user's ID, unique to the Firebase project.
-          // Do NOT use this value to authenticate with your backend server,
-          // if you have one. Use getTokenWithCompletion:completion: instead.
-          let uid = user.uid
-          let email = user.email
-          let photoURL = user.photoURL
-          var multiFactorString = "MultiFactor: "
-            
-          for info in user.multiFactor.enrolledFactors {
-            multiFactorString += info.displayName ?? "[DispayName]"
-            multiFactorString += " "
-          }
-          
-            if user != nil {
-                let name = user.displayName?.split(separator: " ")
-                nameLabel.text = "\(name?[0] ?? "")"
-                
-//                if (user.photoURL == nil) {
-//                    let url = URL(string: "\(user.photoURL)")
-//                    photoURL.contentMode = .scaleAspectFill
-//                    photoURL?.provideImageData(<#T##void#>, bytesPerRow: <#T##Int#>, origin: <#T##Int#>, size: <#T##Int#>, userInfo: <#T##Any?#>)
-//                    imgProfile.kf.setImage(with: url,
-//                                           placeholder: UIImage(named: "profile_icon"),
-//                                           options: [
-//                                            .scaleFactor(UIScreen.main.scale),
-//                                            .transition(.fade(1)),
-//                                            .cacheOriginalImage
-//                                           ]
-//                    )
-            }
-        }
     }
 }
 
+//MARK: - ImagePicker Delegate
+extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.profileImageView.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.profileImageView.image = originalImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - TableView DataSource and Delegate
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return buttonName.count
@@ -132,17 +130,22 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             personalData.definesPresentationContext = true
             personalData.modalPresentationStyle = .automatic
             self.present(personalData, animated: true)
-        } else if buttons == "E-mail e Senha" {
+        } else if buttons == "E-mail" {
             let storyboard = UIStoryboard(name: "UserSettings", bundle: nil)
             let email = storyboard.instantiateViewController(withIdentifier: "EmailEditorViewController") as! EmailEditorViewController
             email.providesPresentationContextTransitionStyle = true
             email.definesPresentationContext = true
             email.modalPresentationStyle = .automatic
             self.present(email, animated: true)
+        } else if buttons == "Senha" {
+            let storyboard = UIStoryboard(name: "UserSettings", bundle: nil)
+            let password = storyboard.instantiateViewController(withIdentifier: "PasswordEditorViewController") as! PasswordEditorViewController
+            password.providesPresentationContextTransitionStyle = true
+            password.definesPresentationContext = true
+            password.modalPresentationStyle = .automatic
+            self.present(password, animated: true)
         } else if buttons == "Sair" {
             self.alertLogOut()
         }
     }
-    
-    
 }
