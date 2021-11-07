@@ -25,6 +25,9 @@ target 'HogwartsApp' do
   pod 'Firebase/Storage' 
   pod 'FirebaseUI/Storage'
   
+  #Feature para fazer download da imagem junto com o FirebaseUI
+  pod 'SDWebImage', '~> 5.0'
+  
   #Alamofire
   pod 'Alamofire', '~> 5.2'
 

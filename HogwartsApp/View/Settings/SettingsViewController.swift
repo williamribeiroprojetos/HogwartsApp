@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseUI
+import SDWebImage
 
 class SettingsViewController: UIViewController {
     
@@ -84,13 +86,19 @@ class SettingsViewController: UIViewController {
     }
     
     func setupUserInfo() {
-        
+        guard let user = Auth.auth().currentUser else { return }
+        let fileName = "user/\(user.uid)/profileImages/"
+        let storageReference = Storage.storage().reference().child(fileName)
+        let reference = storageReference
+        let imageView: UIImageView = self.profileImageView
+        let placeholderImage = UIImage(named: "\(fileName)")
+        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
     }
     
     func uploadImage(imageUrl: URL) {
         do {
-            
-            guard let uid = Auth.auth().currentUser?.uid else { return }
+            guard let user = Auth.auth().currentUser else { return }
+            let uid = user.uid
             let fileExtension = imageUrl.pathExtension
             let fileName = "user/\(uid)/profileImages/\(fileExtension)"
             let metaData = StorageMetadata()
@@ -105,6 +113,18 @@ class SettingsViewController: UIViewController {
                 
                 print("Image file: \(fileName) is uploaded! View it at Firebase console!")
                 
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.photoURL = imageUrl
+                changeRequest.commitChanges { error in
+                    if error != nil {
+                        self.saveImageDatabase(profileImageURL: imageUrl) { success in
+                            if success {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }
+                
                 storageReference.downloadURL { (url, error) in
                     if let error = error  {
                         print("Error on getting download url: \(error.localizedDescription)")
@@ -117,30 +137,19 @@ class SettingsViewController: UIViewController {
             print("Error on extracting data from url: \(error.localizedDescription)")
         }
     }
-//    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
-//
-//
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        let storageRef = Storage.storage().reference().child("user/\(uid)/profileImages/")
-//
-//        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
-//
-//        let metaData = StorageMetadata()
-//        metaData.contentType = "image/jpg"
-//        storageRef.putFile(from: <#T##NSURL#>, metadata: <#T##FIRStorageMetadata?#>, completion: <#T##((FIRStorageMetadata?, Error?) -> Void)?#>) putData(imageData, metadata: metaData) { metaData, error in
-//
-//            if error == nil, metaData != nil {
-//                if let url = URL(string: "")
-//                {
-//                    completion(url)
-//                } else {
-//                    completion(nil)
-//                }
-//            } else {
-//                completion(nil)
-//            }
-//        }
-//    }
+    
+    func saveImageDatabase(profileImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let databaseRef = Database.database().reference().child("user/profile/\(uid)")
+            
+            let userObject = [
+                "photoURL": profileImageURL.absoluteString
+            ] as [String:Any]
+            
+            databaseRef.setValue(userObject) { error, ref in
+                completion(error == nil)
+            }
+        }
 }
 
 //MARK: - ImagePicker Delegate
@@ -154,6 +163,9 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.profileImageView.image = editedImage
+            if let imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+                self.uploadImage(imageUrl: imageURL)
+            }
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.profileImageView.image = originalImage
         }

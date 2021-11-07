@@ -22,7 +22,6 @@
 #import "FBLPromise+Recover.h"
 #import "FBLPromise+Reduce.h"
 #import "FBLPromise+Retry.h"
-#import "FBLPromise+Testing 2.h"
 #import "FBLPromise+Testing.h"
 #import "FBLPromise+Then.h"
 #import "FBLPromise+Timeout.h"
