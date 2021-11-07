@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class SettingsViewController: UIViewController {
     
@@ -84,6 +86,61 @@ class SettingsViewController: UIViewController {
     func setupUserInfo() {
         
     }
+    
+    func uploadImage(imageUrl: URL) {
+        do {
+            
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let fileExtension = imageUrl.pathExtension
+            let fileName = "user/\(uid)/profileImages/\(fileExtension)"
+            let metaData = StorageMetadata()
+            
+            let storageReference = Storage.storage().reference().child(fileName)
+            let currentUploadTask = storageReference.putFile(from: imageUrl, metadata: metaData) { (storageMetaData, error) in
+                
+                if let error = error {
+                    print("Upload error: \(error.localizedDescription)")
+                    return
+                }
+                
+                print("Image file: \(fileName) is uploaded! View it at Firebase console!")
+                
+                storageReference.downloadURL { (url, error) in
+                    if let error = error  {
+                        print("Error on getting download url: \(error.localizedDescription)")
+                        return
+                    }
+                    print("Download url of \(fileName) is \(url!.absoluteString)")
+                }
+            }
+        } catch {
+            print("Error on extracting data from url: \(error.localizedDescription)")
+        }
+    }
+//    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+//
+//
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+//        let storageRef = Storage.storage().reference().child("user/\(uid)/profileImages/")
+//
+//        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+//
+//        let metaData = StorageMetadata()
+//        metaData.contentType = "image/jpg"
+//        storageRef.putFile(from: <#T##NSURL#>, metadata: <#T##FIRStorageMetadata?#>, completion: <#T##((FIRStorageMetadata?, Error?) -> Void)?#>) putData(imageData, metadata: metaData) { metaData, error in
+//
+//            if error == nil, metaData != nil {
+//                if let url = URL(string: "")
+//                {
+//                    completion(url)
+//                } else {
+//                    completion(nil)
+//                }
+//            } else {
+//                completion(nil)
+//            }
+//        }
+//    }
 }
 
 //MARK: - ImagePicker Delegate
