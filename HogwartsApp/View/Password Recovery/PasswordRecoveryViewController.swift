@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PasswordRecoveryViewController: UIViewController {
 
     @IBOutlet var viewMain: GradientView!
-    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var recoverPasswordButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
@@ -31,29 +32,37 @@ class PasswordRecoveryViewController: UIViewController {
           return .lightContent
       }
       
-      @IBAction func recoverPasswordButton(_ sender: Any) {
+      @IBAction func recoverPasswordButton(_ sender: UIButton) {
           if validateForm() {
               self.view.endEditing(true)
-              let emailUser = emailTextfield.text!.trimmingCharacters(in: .whitespaces)
+              let emailUser = emailTextField.text!.trimmingCharacters(in: .whitespaces)
               
               let parameters = [
                   "email": emailUser
               ]
               
-//              let network = Network(self)
-//              network.resetPassword(self, parameters: parameters) { (success) in
-//                  if success {
-//                      self.view.hideLoadingIndicator()
-//                      self.emailTextfield.isHidden = true
-//                      self.textLabel.isHidden = true
-//                      self.viewSuccess.isHidden = false
-//                      self.emailLabel.text = self.emailTextfield.text?.trimmingCharacters(in: .whitespaces)
-//                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
-//                  }
-//              }
+              self.resetPassword(parameters: parameters) { (success) in
+                  if success {
+                      self.emailTextField.isHidden = true
+                      self.textLabel.isHidden = true
+                      self.viewSuccess.isHidden = false
+                      self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
+                  }
+              }
           }
       }
       
+    func resetPassword(parameters: [String : String], completion: @escaping (Bool) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
       @IBAction func loginButton(_ sender: Any) {
           let storyboard = UIStoryboard(name: "User", bundle: nil)
           let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
@@ -73,13 +82,13 @@ class PasswordRecoveryViewController: UIViewController {
       }
       
       fileprivate func validateForm() -> Bool {
-          let status = emailTextfield.text!.isEmpty ||
-              !emailTextfield.text!.contains(".") ||
-              !emailTextfield.text!.contains("@") ||
-              emailTextfield.text!.count <= 5
+          let status = emailTextField.text!.isEmpty ||
+              !emailTextField.text!.contains(".") ||
+              !emailTextField.text!.contains("@") ||
+              emailTextField.text!.count <= 5
           
           if status {
-              emailTextfield.setErrorColor()
+              emailTextField.setErrorColor()
               textLabel.textColor = .systemRed
               textLabel.text = "Verifique o e-mail informado"
               return false
@@ -105,24 +114,24 @@ class PasswordRecoveryViewController: UIViewController {
           createAccountButton.layer.borderWidth = 1
           createAccountButton.layer.borderColor = UIColor.systemYellow.cgColor
           
-          emailTextfield.setEditingColor()
+          emailTextField.setEditingColor()
           
           if !email.isEmpty {
-              emailTextfield.text = email
-              emailTextfield.isEnabled = false
+              emailTextField.text = email
+              emailTextField.isEnabled = false
           }
           validateButton()
       }
       
       //email
       @IBAction func emailBeginEditing(_ sender: Any) {
-          emailTextfield.setEditingColor()
+          emailTextField.setEditingColor()
           textLabel.textColor = .gray
           textLabel.text = "Informe o e-mail associado à sua conta"
       }
       
       @IBAction func emailEditing(_ sender: Any) {
-          emailTextfield.setEditingColor()
+          emailTextField.setEditingColor()
           
           textLabel.textColor = .gray
           textLabel.text = "Informe o e-mail associado à sua conta"
@@ -131,7 +140,7 @@ class PasswordRecoveryViewController: UIViewController {
       }
       
       @IBAction func emailEndEditing(_ sender: Any) {
-          emailTextfield.setEditingColor()
+          emailTextField.setEditingColor()
       }
       
   }
@@ -139,7 +148,7 @@ class PasswordRecoveryViewController: UIViewController {
   extension PasswordRecoveryViewController {
       
       fileprivate func validateButton() {
-          if !emailTextfield.text!.isEmpty {
+          if !emailTextField.text!.isEmpty {
               enableCreateButton()
           } else {
               disableCreateButton()

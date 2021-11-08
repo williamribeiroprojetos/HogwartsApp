@@ -921,7 +921,7 @@ E-mail enviado para:</string>
                         <outlet property="confirmationRecoveryEmail" destination="rZg-Vj-VKY" id="NaP-Kb-GOZ"/>
                         <outlet property="createAccountButton" destination="94O-2x-O32" id="ZKP-9u-UsN"/>
                         <outlet property="emailLabel" destination="CbY-rQ-8VQ" id="F5i-nR-bhy"/>
-                        <outlet property="emailTextfield" destination="trY-dr-e4B" id="m4R-60-frE"/>
+                        <outlet property="emailTextField" destination="trY-dr-e4B" id="m4R-60-frE"/>
                         <outlet property="loginButton" destination="uqC-Qj-UQH" id="lmy-gc-3YD"/>
                         <outlet property="recoverPasswordButton" destination="j66-nm-bmh" id="zr2-gQ-DtQ"/>
                         <outlet property="textLabel" destination="U06-A2-tcN" id="SPE-4y-Zal"/>

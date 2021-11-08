@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PasswordEditorViewController: UIViewController {
     
@@ -38,17 +39,25 @@ class PasswordEditorViewController: UIViewController {
                 "email": emailUser
             ]
             
-//              let network = Network(self)
-//              network.resetPassword(self, parameters: parameters) { (success) in
-//                  if success {
-//                      self.view.hideLoadingIndicator()
-//                      self.emailTextfield.isHidden = true
-//                      self.textLabel.isHidden = true
-//                      self.viewSuccess.isHidden = false
-//                      self.emailLabel.text = self.emailTextfield.text?.trimmingCharacters(in: .whitespaces)
-//                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
-//                  }
-//              }
+            self.resetPassword(parameters: parameters) { (success) in
+                if success {
+                    self.emailTextField.isHidden = true
+                    self.infoLabel.isHidden = true
+                    self.viewSuccess.isHidden = false
+                    self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+                    self.changePasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
+                }
+            }
+        }
+    }
+    
+    func resetPassword(parameters: [String : String], completion: @escaping (Bool) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
     }
     
