@@ -145,12 +145,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3G-Yj-reD" userLabel="Content View" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="798"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quiz_icon" translatesAutoresizingMaskIntoConstraints="NO" id="haz-Hc-KOS">
-                                                        <rect key="frame" x="20" y="63" width="354" height="10"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="10" id="3bx-Zm-imb"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS PESSOAIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A7-R3-to0">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="48"/>
                                                         <constraints>
@@ -175,9 +169,12 @@
                                                                 </hierarchicalColors>
                                                             </imageReference>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tappedCloseButton:" destination="R0J-dA-kkx" eventType="touchUpInside" id="vcI-iJ-cNg"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-cR-m5N">
-                                                        <rect key="frame" x="20" y="88" width="354" height="20"/>
+                                                        <rect key="frame" x="20" y="85" width="354" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="DNi-4Z-o1S"/>
                                                         </constraints>
@@ -186,7 +183,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2B-iz-evd">
-                                                        <rect key="frame" x="20" y="116" width="354" height="48"/>
+                                                        <rect key="frame" x="20" y="113" width="354" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="2tJ-jY-r3F"/>
                                                         </constraints>
@@ -195,13 +192,13 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myx-Gf-4sg" userLabel="NameErrorLabel">
-                                                        <rect key="frame" x="25" y="164" width="349" height="34"/>
+                                                        <rect key="frame" x="25" y="161" width="349" height="34"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" name="n4 base"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-ZD-sGP">
-                                                        <rect key="frame" x="20" y="192" width="167.5" height="20"/>
+                                                        <rect key="frame" x="20" y="189" width="167.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Br8-F3-hJ0"/>
                                                         </constraints>
@@ -210,7 +207,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha seu país" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-hZ-zts" customClass="SwiftMaskField" customModule="SwiftMaskText">
-                                                        <rect key="frame" x="20" y="220" width="167.5" height="48"/>
+                                                        <rect key="frame" x="20" y="217" width="167.5" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="xlX-vG-x4u"/>
                                                         </constraints>
@@ -221,7 +218,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Nascimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpQ-x5-5UD">
-                                                        <rect key="frame" x="206.5" y="192" width="167.5" height="20"/>
+                                                        <rect key="frame" x="206.5" y="189" width="167.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="mLJ-Id-Wm8"/>
                                                         </constraints>
@@ -230,7 +227,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nnm-n8-qER" customClass="SwiftMaskField" customModule="SwiftMaskText">
-                                                        <rect key="frame" x="206.5" y="220" width="167.5" height="48"/>
+                                                        <rect key="frame" x="206.5" y="217" width="167.5" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="uaa-3l-jnD"/>
                                                         </constraints>
@@ -238,7 +235,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" textContentType="date-time"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLi-gs-jd1">
-                                                        <rect key="frame" x="20" y="296" width="354" height="20"/>
+                                                        <rect key="frame" x="20" y="293" width="354" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="lIu-kT-dll"/>
                                                         </constraints>
@@ -247,7 +244,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rn-Ou-jfm">
-                                                        <rect key="frame" x="20" y="324" width="354" height="48"/>
+                                                        <rect key="frame" x="20" y="321" width="354" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="jah-gA-562"/>
                                                         </constraints>
@@ -256,13 +253,13 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Y9-bKk" userLabel="EmailErrorLabel">
-                                                        <rect key="frame" x="25" y="373" width="344" height="29"/>
+                                                        <rect key="frame" x="25" y="370" width="344" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" name="n4 base"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme o seu e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2E-sG-of0">
-                                                        <rect key="frame" x="20" y="400" width="354" height="20"/>
+                                                        <rect key="frame" x="20" y="397" width="354" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="gI8-iY-9Ht"/>
                                                         </constraints>
@@ -271,7 +268,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme o seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KI-iv-J6d">
-                                                        <rect key="frame" x="20" y="428" width="354" height="48"/>
+                                                        <rect key="frame" x="20" y="425" width="354" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="8bH-yp-hyR"/>
                                                         </constraints>
@@ -280,13 +277,13 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIM-gP-hpA" userLabel="EmailConfirmationErrorLabel">
-                                                        <rect key="frame" x="20" y="477" width="349" height="29"/>
+                                                        <rect key="frame" x="20" y="474" width="349" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" name="n4 base"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mra-Yy-i1c">
-                                                        <rect key="frame" x="20" y="504" width="167.5" height="20"/>
+                                                        <rect key="frame" x="20" y="501" width="167.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="RyT-SA-Qum"/>
                                                         </constraints>
@@ -295,7 +292,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zDw-r1-fDQ">
-                                                        <rect key="frame" x="20" y="532" width="167.5" height="48"/>
+                                                        <rect key="frame" x="20" y="529" width="167.5" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Vtn-hO-jIe"/>
                                                         </constraints>
@@ -313,7 +310,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvV-bR-RJT">
-                                                        <rect key="frame" x="139.5" y="532" width="48" height="48"/>
+                                                        <rect key="frame" x="139.5" y="529" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="BeI-cR-EAc"/>
                                                             <constraint firstAttribute="width" constant="48" id="r2e-cM-3Be"/>
@@ -325,7 +322,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme sua senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p5-OR-1cO">
-                                                        <rect key="frame" x="206.5" y="504" width="167.5" height="20"/>
+                                                        <rect key="frame" x="206.5" y="501" width="167.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Pf5-jx-ex4"/>
                                                         </constraints>
@@ -334,7 +331,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oS-9c-Qfm">
-                                                        <rect key="frame" x="206.5" y="532" width="167.5" height="48"/>
+                                                        <rect key="frame" x="206.5" y="529" width="167.5" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="SAP-sM-7dB"/>
                                                         </constraints>
@@ -343,7 +340,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK2-bS-uFD">
-                                                        <rect key="frame" x="326" y="532" width="48" height="48"/>
+                                                        <rect key="frame" x="326" y="529" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="H9W-ws-3U8"/>
                                                             <constraint firstAttribute="height" constant="48" id="Pf9-dX-hH1"/>
@@ -399,10 +396,8 @@
                                                     <constraint firstItem="n2E-sG-of0" firstAttribute="top" secondItem="7rn-Ou-jfm" secondAttribute="bottom" constant="28" id="DKv-pv-Ix0"/>
                                                     <constraint firstItem="6KI-iv-J6d" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="Doh-y7-jsl"/>
                                                     <constraint firstItem="Nnm-n8-qER" firstAttribute="leading" secondItem="5Ux-hZ-zts" secondAttribute="trailing" constant="19" id="Dzr-1N-bsc"/>
-                                                    <constraint firstItem="haz-Hc-KOS" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="E9l-NH-E12"/>
                                                     <constraint firstItem="Mra-Yy-i1c" firstAttribute="top" secondItem="6KI-iv-J6d" secondAttribute="bottom" constant="28" id="Efg-hr-UWx"/>
                                                     <constraint firstItem="TIM-gP-hpA" firstAttribute="top" secondItem="6KI-iv-J6d" secondAttribute="bottom" constant="1" id="ErC-FI-S7O"/>
-                                                    <constraint firstItem="pJa-cR-m5N" firstAttribute="top" secondItem="haz-Hc-KOS" secondAttribute="bottom" constant="15" id="G0L-fB-wEu"/>
                                                     <constraint firstItem="3p5-OR-1cO" firstAttribute="leading" secondItem="Mra-Yy-i1c" secondAttribute="trailing" constant="19" id="GCF-By-ogs"/>
                                                     <constraint firstItem="5oS-9c-Qfm" firstAttribute="top" secondItem="3p5-OR-1cO" secondAttribute="bottom" constant="8" id="H0r-bD-nAz"/>
                                                     <constraint firstItem="myx-Gf-4sg" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="25" id="IA8-De-RJQ"/>
@@ -428,7 +423,6 @@
                                                     <constraint firstItem="6KI-iv-J6d" firstAttribute="top" secondItem="n2E-sG-of0" secondAttribute="bottom" constant="8" id="a0f-9W-5ub"/>
                                                     <constraint firstItem="Mra-Yy-i1c" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="a50-32-DVT"/>
                                                     <constraint firstItem="cn1-KZ-6DS" firstAttribute="leading" secondItem="zDw-r1-fDQ" secondAttribute="leading" id="aIl-JX-n1s"/>
-                                                    <constraint firstAttribute="trailing" secondItem="haz-Hc-KOS" secondAttribute="trailing" constant="20" id="aaC-vm-UMz"/>
                                                     <constraint firstItem="BHi-e5-vO7" firstAttribute="top" secondItem="y3G-Yj-reD" secondAttribute="top" id="ayy-pO-IQl"/>
                                                     <constraint firstItem="ThH-Y9-bKk" firstAttribute="leading" secondItem="myx-Gf-4sg" secondAttribute="leading" id="b7w-vw-8ZC"/>
                                                     <constraint firstAttribute="trailing" secondItem="rvz-TW-ecb" secondAttribute="trailing" constant="28" id="c9u-EF-wdF"/>
@@ -436,9 +430,9 @@
                                                     <constraint firstItem="zDw-r1-fDQ" firstAttribute="top" secondItem="TIM-gP-hpA" secondAttribute="bottom" constant="26" id="epL-DB-p18"/>
                                                     <constraint firstItem="LLi-gs-jd1" firstAttribute="top" secondItem="5Ux-hZ-zts" secondAttribute="bottom" constant="28" id="f9Q-Fz-9aa"/>
                                                     <constraint firstItem="rvz-TW-ecb" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="23" id="fN1-QY-fpG"/>
+                                                    <constraint firstItem="U2B-iz-evd" firstAttribute="top" secondItem="3A7-R3-to0" secondAttribute="bottom" constant="65" id="gi0-Oj-oIE"/>
                                                     <constraint firstAttribute="trailing" secondItem="3A7-R3-to0" secondAttribute="trailing" id="his-Oh-VcK"/>
                                                     <constraint firstAttribute="bottom" secondItem="cn1-KZ-6DS" secondAttribute="bottom" constant="182" id="iH2-Mp-AdA"/>
-                                                    <constraint firstItem="haz-Hc-KOS" firstAttribute="top" secondItem="3A7-R3-to0" secondAttribute="bottom" constant="15" id="iUZ-XF-thK"/>
                                                     <constraint firstItem="wpQ-x5-5UD" firstAttribute="width" secondItem="tpv-ZD-sGP" secondAttribute="width" id="izQ-Pc-aqa"/>
                                                     <constraint firstItem="5Ux-hZ-zts" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="jsS-24-1hb"/>
                                                     <constraint firstItem="7rn-Ou-jfm" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="lJz-ZW-YXV"/>
@@ -526,7 +520,6 @@
                         <outlet property="emailErrorLabel" destination="n2E-sG-of0" id="GIQ-VC-1l0"/>
                         <outlet property="emailLabel" destination="LLi-gs-jd1" id="UWH-gk-c0W"/>
                         <outlet property="emailTextField" destination="7rn-Ou-jfm" id="BTu-lY-o2E"/>
-                        <outlet property="logoImageView" destination="haz-Hc-KOS" id="CjS-ss-Ptw"/>
                         <outlet property="mainView" destination="mko-8k-2Yb" id="7O4-jj-o3a"/>
                         <outlet property="nameErrorLabel" destination="myx-Gf-4sg" id="ffQ-dq-AUu"/>
                         <outlet property="nameLabel" destination="pJa-cR-m5N" id="FCW-Ls-XaX"/>
@@ -783,7 +776,7 @@ E-mail enviado para:</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="dp00"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="138" id="3zn-yJ-2AL"/>
                                             <constraint firstAttribute="trailing" secondItem="CbY-rQ-8VQ" secondAttribute="trailing" id="E5g-b7-qFM"/>
@@ -951,7 +944,6 @@ E-mail enviado para:</string>
     <resources>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="logo" width="200" height="200"/>
-        <image name="quiz_icon" width="1750" height="585.5"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="black soft">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

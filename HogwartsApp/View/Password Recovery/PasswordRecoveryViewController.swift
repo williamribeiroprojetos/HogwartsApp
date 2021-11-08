@@ -33,39 +33,37 @@ class PasswordRecoveryViewController: UIViewController {
       }
       
       @IBAction func recoverPasswordButton(_ sender: UIButton) {
+          
           if validateForm() {
               self.view.endEditing(true)
-              let emailUser = emailTextField.text!.trimmingCharacters(in: .whitespaces)
+              guard let emailUser = self.emailTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
               
-              let parameters = [
-                  "email": emailUser
-              ]
-              
-              self.resetPassword(parameters: parameters) { (success) in
-                  if success {
-                      self.emailTextField.isHidden = true
-                      self.textLabel.isHidden = true
-                      self.viewSuccess.isHidden = false
-                      self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
-                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
-                  }
+              self.resetPassword(email: emailUser) {
+                  self.emailTextField.isHidden = true
+                  self.textLabel.isHidden = true
+                  self.viewSuccess.isHidden = false
+                  self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+                  self.recoverPasswordButton.setTitle("REENVIAR EMAIL", for: .normal)
+              } erro: {
+                  ServiceError.failure
               }
           }
       }
       
-    func resetPassword(parameters: [String : String], completion: @escaping (Bool) -> Void) {
+    func resetPassword(email: String, success: @escaping () -> Void, erro: @escaping () -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error == nil {
-                completion(true)
+                print("Email de redefinição enviado para o usuário")
+                success()
             } else {
-                completion(false)
+                erro()
             }
         }
     }
     
       @IBAction func loginButton(_ sender: Any) {
           let storyboard = UIStoryboard(name: "User", bundle: nil)
-          let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+          let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
           vc.providesPresentationContextTransitionStyle = true
           vc.definesPresentationContext = true
           vc.modalPresentationStyle = .fullScreen
@@ -120,10 +118,8 @@ class PasswordRecoveryViewController: UIViewController {
               emailTextField.text = email
               emailTextField.isEnabled = false
           }
-          validateButton()
       }
       
-      //email
       @IBAction func emailBeginEditing(_ sender: Any) {
           emailTextField.setEditingColor()
           textLabel.textColor = .gray
@@ -135,8 +131,6 @@ class PasswordRecoveryViewController: UIViewController {
           
           textLabel.textColor = .gray
           textLabel.text = "Informe o e-mail associado à sua conta"
-          
-          validateButton()
       }
       
       @IBAction func emailEndEditing(_ sender: Any) {
@@ -144,26 +138,3 @@ class PasswordRecoveryViewController: UIViewController {
       }
       
   }
-
-  extension PasswordRecoveryViewController {
-      
-      fileprivate func validateButton() {
-          if !emailTextField.text!.isEmpty {
-              enableCreateButton()
-          } else {
-              disableCreateButton()
-          }
-      }
-      
-      fileprivate func disableCreateButton() {
-          recoverPasswordButton.backgroundColor = .gray
-          recoverPasswordButton.setTitleColor(.black, for: .normal)
-          recoverPasswordButton.isEnabled = false
-      }
-      
-      fileprivate func enableCreateButton() {
-          recoverPasswordButton.setTitleColor(.white, for: .normal)
-          recoverPasswordButton.isEnabled = true
-      }
-
-}

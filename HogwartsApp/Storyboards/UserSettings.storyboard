@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -347,7 +346,7 @@ E-mail enviado para:</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="dp00"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="nop-pg-p6D" secondAttribute="trailing" id="Exg-do-7bl"/>
                                             <constraint firstItem="nop-pg-p6D" firstAttribute="top" secondItem="Avg-2h-rzD" secondAttribute="top" id="MFE-Rb-vbA"/>
@@ -537,7 +536,7 @@ E-mail enviado para:</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="dp00"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="138" id="8Wm-Qq-R1r"/>
                                             <constraint firstItem="Xsr-e7-KJx" firstAttribute="leading" secondItem="SPM-oo-3tP" secondAttribute="leading" id="8bn-qb-QxT"/>
@@ -703,9 +702,6 @@ E-mail enviado para:</string>
         <image name="logo" width="200" height="200"/>
         <image name="profile_icon" width="256" height="256"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="dp00">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -33,30 +33,27 @@ class PasswordEditorViewController: UIViewController {
     @IBAction func tappedChangePasswordButton(_ sender: UIButton) {
         if validateForm() {
             self.view.endEditing(true)
-            let emailUser = emailTextField.text!.trimmingCharacters(in: .whitespaces)
+            guard let emailUser = self.emailTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
             
-            let parameters = [
-                "email": emailUser
-            ]
-            
-            self.resetPassword(parameters: parameters) { (success) in
-                if success {
-                    self.emailTextField.isHidden = true
-                    self.infoLabel.isHidden = true
-                    self.viewSuccess.isHidden = false
-                    self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
-                    self.changePasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
-                }
+            self.resetPassword(email: emailUser) {
+                self.emailTextField.isHidden = true
+                self.infoLabel.isHidden = true
+                self.viewSuccess.isHidden = false
+                self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+                self.changePasswordButton.setTitle("REENVIAR EMAIL", for: .normal)
+            } erro: {
+                ServiceError.failure
             }
         }
     }
     
-    func resetPassword(parameters: [String : String], completion: @escaping (Bool) -> Void) {
+    func resetPassword(email: String, success: @escaping () -> Void, erro: @escaping () -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error == nil {
-                completion(true)
+                print("Email de redefinição enviado para o usuário")
+                success()
             } else {
-                completion(false)
+                erro()
             }
         }
     }
@@ -89,7 +86,6 @@ extension PasswordEditorViewController {
             emailTextField.text = email
             emailTextField.isEnabled = false
         }
-        validateButton()
     }
     
     @IBAction func emailBeginEditing(_ sender: Any) {
@@ -103,30 +99,9 @@ extension PasswordEditorViewController {
         
         infoLabel.textColor = .gray
         infoLabel.text = "Informe o e-mail associado à sua conta"
-        
-        validateButton()
     }
     
     @IBAction func emailEndEditing(_ sender: Any) {
         emailTextField.setEditingColor()
-    }
-    
-    fileprivate func validateButton() {
-        if !emailTextField.text!.isEmpty {
-            enableCreateButton()
-        } else {
-            disableCreateButton()
-        }
-    }
-    
-    fileprivate func disableCreateButton() {
-        changePasswordButton.backgroundColor = .gray
-        changePasswordButton.setTitleColor(.black, for: .normal)
-        changePasswordButton.isEnabled = false
-    }
-    
-    fileprivate func enableCreateButton() {
-        changePasswordButton.setTitleColor(.white, for: .normal)
-        changePasswordButton.isEnabled = true
     }
 }

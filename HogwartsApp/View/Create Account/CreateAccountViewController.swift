@@ -12,7 +12,6 @@ class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var contentView: GradientView!
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameErrorLabel: UILabel!
@@ -97,6 +96,11 @@ class CreateAccountViewController: UIViewController {
         //PickerView properties
         self.countryTextField.inputView = self.pickerCountry
         self.bdayDatePicker.isHidden = true
+    }
+    
+    @IBAction func tappedCloseButton(_ sender: UIButton) {
+        
+        self.dismiss(animated: true)
     }
     
     @IBAction func didTappedShowPassword(_ sender: UIButton) {
