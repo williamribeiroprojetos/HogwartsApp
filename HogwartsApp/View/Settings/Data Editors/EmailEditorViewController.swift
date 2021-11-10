@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class EmailEditorViewController: UIViewController {
     
@@ -30,25 +32,29 @@ class EmailEditorViewController: UIViewController {
     }
     
     @IBAction func tappedChangeEmailButton(_ sender: UIButton) {
-        if validateForm() {
-            self.view.endEditing(true)
-            let emailUser = emailTextField.text!.trimmingCharacters(in: .whitespaces)
-            
-            let parameters = [
-                "email": emailUser
-            ]
-            
-//              let network = Network(self)
-//              network.resetPassword(self, parameters: parameters) { (success) in
-//                  if success {
-//                      self.view.hideLoadingIndicator()
-//                      self.emailTextfield.isHidden = true
-//                      self.textLabel.isHidden = true
-//                      self.viewSuccess.isHidden = false
-//                      self.emailLabel.text = self.emailTextfield.text?.trimmingCharacters(in: .whitespaces)
-//                      self.recoverPasswordButton.titleLabel?.text = "REENVIAR E-MAIL"
-//                  }
-//              }
+        changeEmail {
+            self.emailTextField.isHidden = true
+            self.infoLabel.isHidden = true
+            self.viewSuccess.isHidden = false
+            self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+            self.changeEmailButton.isEnabled = false
+        }
+    }
+    
+    func changeEmail(completion: @escaping () -> Void) {
+        let db = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        let userEmail = Auth.auth().currentUser?.email
+        let currentUser = Auth.auth().currentUser
+        if emailTextField.text != nil {
+            db.child("users").child(userID!).updateChildValues(["email" : emailTextField.text!])
+            if emailTextField.text != userEmail {
+                currentUser?.updateEmail(to: emailTextField.text ?? "") { erro in
+                    if let error = erro {
+                        print("Erro ao alterar email. \(String(describing: error))")
+                    }
+                }
+            }
         }
     }
     

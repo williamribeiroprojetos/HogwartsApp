@@ -9,12 +9,14 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-protocol FirebaseUserRepositoring {
-    func saveUser(id: String, data: SaveUserFirebase)
-    func readUser(email: String, completion: @escaping ((Result<[SaveUserFirebase], Error>)->Void))
+protocol FirebaseServiceRepositoring {
+    func saveFavoriteBeasts(id: String, data: BeastsFirebase)
+    func readFavoriteBeasts(email: String, completion: @escaping ((Result<[BeastsFirebase], Error>)->Void))
+    func saveFavoriteCharacters(id: String, data: CharactersFirebase)
+    func readFavoriteCharacters(email: String, completion: @escaping ((Result<[CharactersFirebase], Error>)->Void))
 }
 
-class FirebaseUser: FirebaseUserRepositoring {
+class FirebaseService: FirebaseServiceRepositoring {
     
     let userManager: UserIdManaging
 
@@ -29,7 +31,7 @@ class FirebaseUser: FirebaseUserRepositoring {
         return usersCollectionReference.document(id)
     }()
     
-    func saveUser(id: String, data: SaveUserFirebase) {
+    func saveFavoriteBeasts(id: String, data: BeastsFirebase) {
         guard let idReference = referenceUser?.collection("User"), !id.isEmpty else {
             return
         }
@@ -40,8 +42,8 @@ class FirebaseUser: FirebaseUserRepositoring {
         }
     }
     
-    func readUser(email: String, completion: @escaping ((Result<[SaveUserFirebase], Error>) -> Void)) {
-        var userDataItems: [SaveUserFirebase] = []
+    func readFavoriteBeasts(email: String, completion: @escaping ((Result<[BeastsFirebase], Error>) -> Void)) {
+        var userDataItems: [BeastsFirebase] = []
         guard let idReference = referenceUser?.collection("User") else {
             return
         }
@@ -57,10 +59,18 @@ class FirebaseUser: FirebaseUserRepositoring {
             }
             
             userDataItems = snapshot.documents.compactMap { document in
-                let userFirebase = try? document.data(as: SaveUserFirebase.self)
+                let userFirebase = try? document.data(as: BeastsFirebase.self)
                 return userFirebase
             }
             completion(.success(userDataItems))
         }
+    }
+    
+    func saveFavoriteCharacters(id: String, data: CharactersFirebase) {
+        
+    }
+    
+    func readFavoriteCharacters(email: String, completion: @escaping ((Result<[CharactersFirebase], Error>)->Void)) {
+        
     }
 }

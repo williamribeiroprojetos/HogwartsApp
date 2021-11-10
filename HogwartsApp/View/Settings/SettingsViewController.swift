@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         houseView.layer.cornerRadius = 5
         settingsTableView.delegate = self
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
         
         self.present(imagePicker, animated: true, completion: nil)
     }
-
+    
     @IBAction func tappedChangeProfileImageButton(_ sender: UIButton) {
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
         profileImageView.isUserInteractionEnabled = true
@@ -62,11 +62,11 @@ class SettingsViewController: UIViewController {
         let action = UIAlertAction(title: "Continuar", style: .default) { _ in
             let firebaseAuth = Auth.auth()
             do {
-              try firebaseAuth.signOut()
+                try firebaseAuth.signOut()
                 print("Usuário deslogado")
                 self.continueToLogin()
             } catch let signOutError as NSError {
-              print("Error signing out: %@", signOutError)
+                print("Error signing out: %@", signOutError)
             }
         }
         let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
@@ -138,18 +138,18 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func saveImageDatabase(profileImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            let databaseRef = Database.database().reference().child("user/profile/\(uid)")
-            
-            let userObject = [
-                "photoURL": profileImageURL.absoluteString
-            ] as [String:Any]
-            
-            databaseRef.setValue(userObject) { error, ref in
-                completion(error == nil)
-            }
+    func saveImageDatabase(profileImageURL: URL, completion: @escaping ((_ success: Bool)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("users").child(uid)
+        
+        let userObject = [
+            "photoURL": profileImageURL.absoluteString
+        ] as [String:Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
         }
+    }
 }
 
 //MARK: - ImagePicker Delegate

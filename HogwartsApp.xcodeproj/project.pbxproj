@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90D609B333E6E4BBC503B928 /* Pods_HogwartsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98B05813A671335F641BDBB /* Pods_HogwartsApp.framework */; };
+		B41419C6273C7CDB0046040D /* CharactersFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41419C5273C7CDB0046040D /* CharactersFirebase.swift */; };
 		B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A47271CAFD900B6C89E /* CharactersViewController.swift */; };
 		B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */; };
 		B4163A4C271CB02900B6C89E /* BeastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4163A4B271CB02900B6C89E /* BeastsViewController.swift */; };
@@ -27,8 +28,8 @@
 		B45D30CE2713B77900DF2EA3 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45D30CD2713B77900DF2EA3 /* User.storyboard */; };
 		B4A8006D2734345F0014DA53 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A8006C2734345F0014DA53 /* ServiceError.swift */; };
 		B4CB3FD3273344DC00581DA8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD2273344DC00581DA8 /* UserManager.swift */; };
-		B4CB3FD62733470C00581DA8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */; };
-		B4CB3FD82733478F00581DA8 /* SaveUserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD72733478F00581DA8 /* SaveUserFirebase.swift */; };
+		B4CB3FD62733470C00581DA8 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD52733470C00581DA8 /* FirebaseService.swift */; };
+		B4CB3FD82733478F00581DA8 /* BeastsFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CB3FD72733478F00581DA8 /* BeastsFirebase.swift */; };
 		B4E4DD82270D25D500C1347B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD81270D25D500C1347B /* AppDelegate.swift */; };
 		B4E4DD86270D25D500C1347B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E4DD85270D25D500C1347B /* HomeViewController.swift */; };
 		B4E4DD89270D25D500C1347B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E4DD87270D25D500C1347B /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B41419C5273C7CDB0046040D /* CharactersFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFirebase.swift; sourceTree = "<group>"; };
 		B4163A47271CAFD900B6C89E /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		B4163A49271CAFE500B6C89E /* CharactersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewController.swift; sourceTree = "<group>"; };
 		B4163A4B271CB02900B6C89E /* BeastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastsViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +88,8 @@
 		B45D30CD2713B77900DF2EA3 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B4A8006C2734345F0014DA53 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		B4CB3FD2273344DC00581DA8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
-		B4CB3FD72733478F00581DA8 /* SaveUserFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserFirebase.swift; sourceTree = "<group>"; };
+		B4CB3FD52733470C00581DA8 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		B4CB3FD72733478F00581DA8 /* BeastsFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastsFirebase.swift; sourceTree = "<group>"; };
 		B4E4DD7E270D25D500C1347B /* HogwartsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HogwartsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E4DD81270D25D500C1347B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E4DD85270D25D500C1347B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CB3FD2273344DC00581DA8 /* UserManager.swift */,
-				B4CB3FD52733470C00581DA8 /* FirebaseUser.swift */,
+				B4CB3FD52733470C00581DA8 /* FirebaseService.swift */,
 				B4A8006C2734345F0014DA53 /* ServiceError.swift */,
 			);
 			path = Service;
@@ -273,7 +275,8 @@
 			children = (
 				B4EE2D3B2714A6C1003C8D61 /* Beasts.swift */,
 				B4EE2D3D2714A6E0003C8D61 /* Character.swift */,
-				B4CB3FD72733478F00581DA8 /* SaveUserFirebase.swift */,
+				B4CB3FD72733478F00581DA8 /* BeastsFirebase.swift */,
+				B41419C5273C7CDB0046040D /* CharactersFirebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -580,7 +583,7 @@
 				B4EE2D5F2714CE00003C8D61 /* CreateAccountViewController.swift in Sources */,
 				B430166527206FF400B7C199 /* PasswordEditorViewController.swift in Sources */,
 				B4EE2D6F2714DB61003C8D61 /* QuestionsViewController.swift in Sources */,
-				B4CB3FD62733470C00581DA8 /* FirebaseUser.swift in Sources */,
+				B4CB3FD62733470C00581DA8 /* FirebaseService.swift in Sources */,
 				B4163A48271CAFD900B6C89E /* CharactersViewController.swift in Sources */,
 				B4CB3FD3273344DC00581DA8 /* UserManager.swift in Sources */,
 				B4E4DDA1270D30F300C1347B /* UITextFieldHelper.swift in Sources */,
@@ -597,8 +600,9 @@
 				B4EE2D562714A92E003C8D61 /* MyFavoritesViewController.swift in Sources */,
 				B4163A4A271CAFE500B6C89E /* CharactersDetailViewController.swift in Sources */,
 				B4EE2D672714D9B2003C8D61 /* CharactersTableCell.swift in Sources */,
+				B41419C6273C7CDB0046040D /* CharactersFirebase.swift in Sources */,
 				B4E4DD9F270D30E800C1347B /* ButtonGradient.swift in Sources */,
-				B4CB3FD82733478F00581DA8 /* SaveUserFirebase.swift in Sources */,
+				B4CB3FD82733478F00581DA8 /* BeastsFirebase.swift in Sources */,
 				B4E4DDA7270D35AA00C1347B /* ButtonCollectionCell.swift in Sources */,
 				B430165D2720614000B7C199 /* ButtonTableCell.swift in Sources */,
 			);
