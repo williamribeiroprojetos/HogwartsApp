@@ -8,32 +8,32 @@
 import UIKit
 
 class CharactersTableCell: UITableViewCell {
-
+    
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     
     var imageURL: String = ""
     var name: String = ""
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
     func setup(value: Character) {
         self.characterNameLabel.text = value.name
         self.characterImageView.downloaded(from: value.image)
-        self.characterImageView.layer.cornerRadius = 58
+        self.characterImageView.layer.cornerRadius = characterImageView.frame.height / 2
         self.characterImageView.clipsToBounds = true
         self.characterImageView.contentMode = UIView.ContentMode.scaleAspectFill
         self.characterImageView.layer.masksToBounds = true
-
+        
     }
     
 }
@@ -53,7 +53,7 @@ extension UIImageView {
             }
         }.resume()
     }
-
+    
     func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)

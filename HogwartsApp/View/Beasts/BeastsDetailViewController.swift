@@ -8,7 +8,7 @@
 import UIKit
 
 class BeastsDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var viewMain: GradientView!
     @IBOutlet weak var beastImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -18,9 +18,9 @@ class BeastsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        favoriteButton.layer.cornerRadius = favoriteButton.frame.height / 2
+        favoriteButton.isHidden = true
         beastImageView.layer.cornerRadius = 5
         setup()
     }
@@ -33,7 +33,7 @@ class BeastsDetailViewController: UIViewController {
             return
         }
         self.beastImageView.image = UIImage(named: value.avatar ?? "")
-        self.descriptionLabel.text = " Nome: \(value.name ?? "") \n Característias: \(value.characteristics ?? "")"
+        self.descriptionLabel.text = "\(value.characteristics ?? "")"
         title = value.name
     }
     

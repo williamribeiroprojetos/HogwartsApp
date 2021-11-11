@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -104,6 +105,7 @@
                         <outlet property="hatImageView" destination="Hbw-wG-vKW" id="vZI-h8-dKs"/>
                         <outlet property="nameTextField" destination="THZ-a5-0P5" id="N6d-cC-SnV"/>
                         <outlet property="suffleButton" destination="dTz-PS-dYi" id="vU6-X8-UVJ"/>
+                        <outlet property="titleLabel" destination="8NG-Oh-GOv" id="Cc4-Y4-fUu"/>
                         <outlet property="viewMain" destination="ZZu-E5-QGP" id="1F0-12-s97"/>
                     </connections>
                 </viewController>

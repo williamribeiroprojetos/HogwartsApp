@@ -17,6 +17,8 @@ class PasswordEditorViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var changePasswordButton: ButtonGradient!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var email = ""
     
@@ -79,7 +81,9 @@ extension PasswordEditorViewController {
     
     fileprivate func setupView() {
         changePasswordButton.layer.cornerRadius = changePasswordButton.bounds.height / 2
-        
+        closeButton.isHidden = true
+        titleLabel.isHidden = true
+        title = "Alteração de Senha"
         emailTextField.setEditingColor()
         
         if !email.isEmpty {

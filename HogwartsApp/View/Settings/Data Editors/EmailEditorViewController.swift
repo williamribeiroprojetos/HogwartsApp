@@ -18,6 +18,8 @@ class EmailEditorViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var changeEmailButton: ButtonGradient!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var email = ""
     
@@ -79,9 +81,10 @@ extension EmailEditorViewController {
     
     fileprivate func setupView() {
         changeEmailButton.layer.cornerRadius = changeEmailButton.bounds.height / 2
-        
+        closeButton.isHidden = true
         emailTextField.setEditingColor()
-        
+        titleLabel.isHidden = true
+        title = "Alteração de E-mail"
         if !email.isEmpty {
             emailTextField.text = email
             emailTextField.isEnabled = false

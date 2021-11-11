@@ -15,6 +15,8 @@ class PersonalDataViewController: UIViewController {
     @IBOutlet weak var bdayTextField: UITextField!
     @IBOutlet weak var bdayDatePicker: UIDatePicker!
     @IBOutlet weak var saveButton: ButtonGradient!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,9 @@ class PersonalDataViewController: UIViewController {
         bdayTextField.setEditingColor()
         bdayTextField.isEnabled = false
         countryTextField.setEditingColor()
+        closeButton.isHidden = true
+        titleLabel.isHidden = true
+        title = "Dados Pessoais"
     }
     
     @IBAction func closeButton(_ sender: UIButton) {

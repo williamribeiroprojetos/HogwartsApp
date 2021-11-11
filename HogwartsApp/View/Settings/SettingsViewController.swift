@@ -26,16 +26,55 @@ class SettingsViewController: UIViewController {
     var imagePicker: UIImagePickerController!
     var buttonName = ["Dados Pessoais", "E-mail", "Senha", "Sair"]
     
+    private let imageView = UIImageView(image: UIImage(named: "profile_icon"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        setupUI()
+        setupUserInfo()
+    }
+    
+    private func setupUI() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        title = "Perfil"
+        
+        guard let navigationBar = self.navigationController?.navigationBar else { return }
+        navigationBar.addSubview(imageView)
+        imageView.layer.cornerRadius = Const.ImageSizeForLargeState / 2
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -Const.ImageRightMargin),
+            imageView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: -Const.ImageBottomMarginForLargeState),
+            imageView.heightAnchor.constraint(equalToConstant: Const.ImageSizeForLargeState),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
+        ])
+        
         houseView.layer.cornerRadius = 5
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.frame = view.bounds
         settingsTableView.register(UINib(nibName: "ButtonTableCell", bundle: nil), forCellReuseIdentifier: "ButtonTableCell")
-        setupUserInfo()
+    }
+    
+    private struct Const {
+        /// Image height/width for Large NavBar state
+        static let ImageSizeForLargeState: CGFloat = 40
+        /// Margin from right anchor of safe area to right anchor of Image
+        static let ImageRightMargin: CGFloat = 16
+        /// Margin from bottom anchor of NavBar to bottom anchor of Image for Large NavBar state
+        static let ImageBottomMarginForLargeState: CGFloat = 12
+        /// Margin from bottom anchor of NavBar to bottom anchor of Image for Small NavBar state
+        static let ImageBottomMarginForSmallState: CGFloat = 6
+        /// Image height/width for Small NavBar state
+        static let ImageSizeForSmallState: CGFloat = 32
+        /// Height of NavBar for Small state. Usually it's just 44
+        static let NavBarHeightSmallState: CGFloat = 44
+        /// Height of NavBar for Large state. Usually it's just 96.5 but if you have a custom font for the title, please make sure to edit this value since it changes the height for Large state of NavBar
+        static let NavBarHeightLargeState: CGFloat = 96.5
     }
     
     @objc func openImagePicker(_ sender:Any) {
@@ -197,22 +236,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let personalData = storyboard.instantiateViewController(withIdentifier: "PersonalDataViewController") as! PersonalDataViewController
             personalData.providesPresentationContextTransitionStyle = true
             personalData.definesPresentationContext = true
-            personalData.modalPresentationStyle = .automatic
-            self.present(personalData, animated: true)
+            navigationController?.pushViewController(personalData, animated: true)
         } else if buttons == "E-mail" {
             let storyboard = UIStoryboard(name: "UserSettings", bundle: nil)
             let email = storyboard.instantiateViewController(withIdentifier: "EmailEditorViewController") as! EmailEditorViewController
             email.providesPresentationContextTransitionStyle = true
             email.definesPresentationContext = true
-            email.modalPresentationStyle = .automatic
-            self.present(email, animated: true)
+            navigationController?.pushViewController(email, animated: true)
         } else if buttons == "Senha" {
             let storyboard = UIStoryboard(name: "UserSettings", bundle: nil)
             let password = storyboard.instantiateViewController(withIdentifier: "PasswordEditorViewController") as! PasswordEditorViewController
             password.providesPresentationContextTransitionStyle = true
             password.definesPresentationContext = true
-            password.modalPresentationStyle = .automatic
-            self.present(password, animated: true)
+            navigationController?.pushViewController(password, animated: true)
         } else if buttons == "Sair" {
             self.alertLogOut()
         }

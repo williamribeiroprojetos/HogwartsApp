@@ -72,25 +72,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzS-1w-AOv" customClass="GradientView" customModule="HogwartsApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="42" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="42" width="414" height="840"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hud-yJ-e5w">
-                                                <rect key="frame" x="20" y="405" width="374" height="330"/>
+                                                <rect key="frame" x="20" y="362" width="374" height="330"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="330" id="9cb-9V-1ZO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9L-dj-GOo">
-                                                <rect key="frame" x="40" y="103" width="334" height="242"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9L-dj-GOo">
+                                                <rect key="frame" x="40" y="60" width="334" height="242"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="242" id="tL8-0V-fXG"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-nR-G4G" customClass="ButtonGradient" customModule="HogwartsApp" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="912" width="402" height="48"/>
+                                                <rect key="frame" x="6" y="752" width="402" height="48"/>
                                                 <color key="backgroundColor" red="0.6625953913" green="0.50837218760000003" blue="0.24552798270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="JM0-Fx-Fpc"/>
@@ -114,17 +114,16 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Teg-nR-G4G" firstAttribute="top" secondItem="Hud-yJ-e5w" secondAttribute="bottom" constant="60" id="62C-vQ-Rzr"/>
                                             <constraint firstAttribute="width" constant="414" id="6Wg-J4-gjr"/>
                                             <constraint firstItem="Hud-yJ-e5w" firstAttribute="top" secondItem="u9L-dj-GOo" secondAttribute="bottom" constant="60" id="CQX-TU-O1F"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="800" id="FqL-47-2zJ"/>
                                             <constraint firstAttribute="bottom" secondItem="Teg-nR-G4G" secondAttribute="bottom" constant="40" id="G8q-J8-dPv"/>
                                             <constraint firstAttribute="trailing" secondItem="Teg-nR-G4G" secondAttribute="trailing" constant="6" id="TQY-ev-Uxd"/>
                                             <constraint firstAttribute="trailing" secondItem="Hud-yJ-e5w" secondAttribute="trailing" constant="20" id="UWg-Vq-Zgu"/>
                                             <constraint firstItem="Hud-yJ-e5w" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="20" id="Vdw-qB-3hQ"/>
                                             <constraint firstAttribute="trailing" secondItem="u9L-dj-GOo" secondAttribute="trailing" constant="40" id="WPt-DH-p9f"/>
-                                            <constraint firstItem="u9L-dj-GOo" firstAttribute="top" secondItem="BzS-1w-AOv" secondAttribute="top" constant="103" id="WuQ-H7-3WB"/>
+                                            <constraint firstItem="u9L-dj-GOo" firstAttribute="top" secondItem="BzS-1w-AOv" secondAttribute="top" constant="60" id="WuQ-H7-3WB"/>
                                             <constraint firstItem="u9L-dj-GOo" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="40" id="e92-c4-7la"/>
-                                            <constraint firstItem="Teg-nR-G4G" firstAttribute="top" secondItem="Hud-yJ-e5w" secondAttribute="bottom" constant="177" id="l5h-Ju-hEb"/>
                                             <constraint firstItem="Teg-nR-G4G" firstAttribute="leading" secondItem="BzS-1w-AOv" secondAttribute="leading" constant="6" id="nfP-Bz-NB8"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>

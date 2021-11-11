@@ -36,9 +36,9 @@ class HomeViewController: UIViewController {
     
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        
         title = "Home"
-
+        
         // Initial setup for image for Large NavBar state since the the screen always has Large NavBar once it gets opened
         guard let navigationBar = self.navigationController?.navigationBar else { return }
         navigationBar.addSubview(imageView)
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
             imageView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: -Const.ImageBottomMarginForLargeState),
             imageView.heightAnchor.constraint(equalToConstant: Const.ImageSizeForLargeState),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
-            ])
+        ])
     }
     
     private struct Const {
@@ -72,11 +72,11 @@ class HomeViewController: UIViewController {
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        let storyboard = UIStoryboard(name: "UserSettings", bundle: nil)
-        let charactersVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        charactersVC.providesPresentationContextTransitionStyle = true
-        charactersVC.definesPresentationContext = true
-        navigationController?.pushViewController(charactersVC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let userVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        userVC.providesPresentationContextTransitionStyle = true
+        userVC.definesPresentationContext = true
+        navigationController?.pushViewController(userVC, animated: true)
     }
 }
 

@@ -20,9 +20,9 @@ class CharactersDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        saveFavoriteButton.layer.cornerRadius = saveFavoriteButton.frame.height / 2
+        saveFavoriteButton.isHidden = true
         characterImage.layer.cornerRadius = 5
         setup()
     }
@@ -35,7 +35,7 @@ class CharactersDetailViewController: UIViewController {
         guard let value = character else {
             return
         }
-
+        
         let varinha: String = value.wand.wood
         title = value.name
         self.descriptionLabel.text = " Espécie: \(value.species) \n Gênero: \(value.gender)\n Data de nascimento: \(value.dateOfBirth) \n Casa: \(value.house)\n Ancestralidade: \(value.ancestry) \n Cor dos olhos: \(value.eyeColour) \n Cor dos cabelos: \(value.hairColour) \n Patrono: \(value.patronus) \n Varinha: \(varinha) \n Ator: \(value.actor)"
