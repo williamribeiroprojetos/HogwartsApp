@@ -253,7 +253,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-Y9-bKk" userLabel="EmailErrorLabel">
-                                                        <rect key="frame" x="25" y="370" width="344" height="29"/>
+                                                        <rect key="frame" x="25" y="370" width="0.0" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" name="n4 base"/>
                                                         <nil key="highlightedColor"/>
@@ -277,7 +277,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIM-gP-hpA" userLabel="EmailConfirmationErrorLabel">
-                                                        <rect key="frame" x="20" y="474" width="349" height="29"/>
+                                                        <rect key="frame" x="20" y="474" width="5" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" name="n4 base"/>
                                                         <nil key="highlightedColor"/>
@@ -301,7 +301,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn1-KZ-6DS" userLabel="PasswordErrorLabel">
-                                                        <rect key="frame" x="20" y="582" width="349" height="34"/>
+                                                        <rect key="frame" x="20" y="582" width="5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="qnc-0b-wUa"/>
                                                         </constraints>
@@ -372,10 +372,6 @@
                                                             <action selector="tappedSignInButton:" destination="R0J-dA-kkx" eventType="touchUpInside" id="UTX-3u-rwg"/>
                                                         </connections>
                                                     </button>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-TW-ecb">
-                                                        <rect key="frame" x="23" y="624" width="343" height="76"/>
-                                                        <locale key="locale" localeIdentifier="pt_BR"/>
-                                                    </datePicker>
                                                 </subviews>
                                                 <color key="backgroundColor" name="dp02"/>
                                                 <constraints>
@@ -389,7 +385,6 @@
                                                     <constraint firstItem="5oS-9c-Qfm" firstAttribute="width" secondItem="zDw-r1-fDQ" secondAttribute="width" id="6p4-V1-DtS"/>
                                                     <constraint firstItem="wpQ-x5-5UD" firstAttribute="top" secondItem="U2B-iz-evd" secondAttribute="bottom" constant="28" id="6vO-Xd-4Ie"/>
                                                     <constraint firstAttribute="trailing" secondItem="U2B-iz-evd" secondAttribute="trailing" constant="20" id="7gq-rL-ssY"/>
-                                                    <constraint firstItem="sAH-Ge-hfK" firstAttribute="top" secondItem="rvz-TW-ecb" secondAttribute="bottom" constant="20" id="9JD-DM-hRe"/>
                                                     <constraint firstAttribute="trailing" secondItem="BHi-e5-vO7" secondAttribute="trailing" id="9Zr-6X-Xkc"/>
                                                     <constraint firstAttribute="trailing" secondItem="6KI-iv-J6d" secondAttribute="trailing" constant="20" id="9wB-FC-BPN"/>
                                                     <constraint firstItem="sAH-Ge-hfK" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="DGr-8V-0q3"/>
@@ -408,7 +403,6 @@
                                                     <constraint firstItem="U2B-iz-evd" firstAttribute="top" secondItem="pJa-cR-m5N" secondAttribute="bottom" constant="8" id="KDC-aa-N8w"/>
                                                     <constraint firstAttribute="trailing" secondItem="XK2-bS-uFD" secondAttribute="trailing" constant="20" id="LUP-lq-73i"/>
                                                     <constraint firstItem="5oS-9c-Qfm" firstAttribute="leading" secondItem="zDw-r1-fDQ" secondAttribute="trailing" constant="19" id="LiO-PR-bxz"/>
-                                                    <constraint firstItem="cn1-KZ-6DS" firstAttribute="centerX" secondItem="rvz-TW-ecb" secondAttribute="centerX" id="M2w-u5-ZmR"/>
                                                     <constraint firstItem="7rn-Ou-jfm" firstAttribute="top" secondItem="LLi-gs-jd1" secondAttribute="bottom" constant="8" id="MRu-jS-B4T"/>
                                                     <constraint firstItem="cvV-bR-RJT" firstAttribute="top" secondItem="Mra-Yy-i1c" secondAttribute="bottom" constant="8" id="Mn5-08-Emf"/>
                                                     <constraint firstAttribute="trailing" secondItem="LLi-gs-jd1" secondAttribute="trailing" constant="20" id="NL2-md-pbM"/>
@@ -425,11 +419,9 @@
                                                     <constraint firstItem="cn1-KZ-6DS" firstAttribute="leading" secondItem="zDw-r1-fDQ" secondAttribute="leading" id="aIl-JX-n1s"/>
                                                     <constraint firstItem="BHi-e5-vO7" firstAttribute="top" secondItem="y3G-Yj-reD" secondAttribute="top" id="ayy-pO-IQl"/>
                                                     <constraint firstItem="ThH-Y9-bKk" firstAttribute="leading" secondItem="myx-Gf-4sg" secondAttribute="leading" id="b7w-vw-8ZC"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rvz-TW-ecb" secondAttribute="trailing" constant="28" id="c9u-EF-wdF"/>
                                                     <constraint firstItem="5oS-9c-Qfm" firstAttribute="height" secondItem="zDw-r1-fDQ" secondAttribute="height" id="duh-3s-eGr"/>
                                                     <constraint firstItem="zDw-r1-fDQ" firstAttribute="top" secondItem="TIM-gP-hpA" secondAttribute="bottom" constant="26" id="epL-DB-p18"/>
                                                     <constraint firstItem="LLi-gs-jd1" firstAttribute="top" secondItem="5Ux-hZ-zts" secondAttribute="bottom" constant="28" id="f9Q-Fz-9aa"/>
-                                                    <constraint firstItem="rvz-TW-ecb" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="23" id="fN1-QY-fpG"/>
                                                     <constraint firstItem="U2B-iz-evd" firstAttribute="top" secondItem="3A7-R3-to0" secondAttribute="bottom" constant="65" id="gi0-Oj-oIE"/>
                                                     <constraint firstAttribute="trailing" secondItem="3A7-R3-to0" secondAttribute="trailing" id="his-Oh-VcK"/>
                                                     <constraint firstAttribute="bottom" secondItem="cn1-KZ-6DS" secondAttribute="bottom" constant="182" id="iH2-Mp-AdA"/>
@@ -454,7 +446,6 @@
                                                     <constraint firstItem="cn1-KZ-6DS" firstAttribute="leading" secondItem="TIM-gP-hpA" secondAttribute="leading" id="sLD-jl-VxF"/>
                                                     <constraint firstAttribute="trailing" secondItem="n2E-sG-of0" secondAttribute="trailing" constant="20" id="spl-Wc-A8K"/>
                                                     <constraint firstItem="tpv-ZD-sGP" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="tHv-u4-jo1"/>
-                                                    <constraint firstItem="rvz-TW-ecb" firstAttribute="top" secondItem="cn1-KZ-6DS" secondAttribute="bottom" constant="8" id="tft-3C-B8n"/>
                                                     <constraint firstAttribute="trailing" secondItem="sAH-Ge-hfK" secondAttribute="trailing" constant="20" id="vWY-tx-GC9"/>
                                                     <constraint firstItem="ThH-Y9-bKk" firstAttribute="top" secondItem="7rn-Ou-jfm" secondAttribute="bottom" constant="1" id="wCV-Kj-5oj"/>
                                                     <constraint firstItem="n2E-sG-of0" firstAttribute="leading" secondItem="y3G-Yj-reD" secondAttribute="leading" constant="20" id="yUj-6b-XpO"/>
@@ -507,7 +498,6 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="bdayDatePicker" destination="rvz-TW-ecb" id="bxR-ri-hc1"/>
                         <outlet property="bdayLabel" destination="wpQ-x5-5UD" id="HDU-dd-6Gg"/>
                         <outlet property="bdayTextField" destination="Nnm-n8-qER" id="xMY-ng-Coi"/>
                         <outlet property="confirmEmailLabel" destination="TIM-gP-hpA" id="GYi-o9-Q90"/>

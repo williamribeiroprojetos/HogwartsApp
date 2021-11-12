@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,15 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let authListener = Auth.auth().addStateDidChangeListener { auth, user in
             
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let userStoryboard = UIStoryboard(name: "User", bundle: nil)
             
             if user != nil {
-                let mainTabBarController = mainStoryboard.instantiateViewController(identifier: "MainTabBarController")
-                self.window?.rootViewController = mainTabBarController
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+                self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else {
-                let home = userStoryboard.instantiateViewController(identifier: "MainViewController")
+                let home = userStoryboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
                 self.window?.rootViewController = home
                 self.window?.makeKeyAndVisible()
             }

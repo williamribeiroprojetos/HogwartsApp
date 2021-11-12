@@ -34,22 +34,31 @@ class EmailEditorViewController: UIViewController {
     }
     
     @IBAction func tappedChangeEmailButton(_ sender: UIButton) {
-        changeEmail {
-            self.emailTextField.isHidden = true
-            self.infoLabel.isHidden = true
-            self.viewSuccess.isHidden = false
-            self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
-            self.changeEmailButton.isEnabled = false
+        if validateForm() {
+            self.view.endEditing(true)
+            guard let emailUser = self.emailTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
+            
+            self.changeEmail(email: emailUser) { (success) in
+                if success {
+                    self.emailTextField.isHidden = true
+                    self.infoLabel.isHidden = true
+                    self.viewSuccess.isHidden = false
+                    self.emailLabel.text = self.emailTextField.text?.trimmingCharacters(in: .whitespaces)
+                    self.changeEmailButton.isEnabled = false
+                }
+            }
+        } else {
+            print(ServiceError.wrongEmailOrPassword)
         }
     }
     
-    func changeEmail(completion: @escaping () -> Void) {
+    func changeEmail(email: String, completion: @escaping (Bool) -> Void) {
         let db = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         let userEmail = Auth.auth().currentUser?.email
         let currentUser = Auth.auth().currentUser
         if emailTextField.text != nil {
-            db.child("users").child(userID!).updateChildValues(["email" : emailTextField.text!])
+            db.child("users").child(userID!).updateChildValues(["userEmail" : emailTextField.text!])
             if emailTextField.text != userEmail {
                 currentUser?.updateEmail(to: emailTextField.text ?? "") { erro in
                     if let error = erro {
@@ -89,7 +98,6 @@ extension EmailEditorViewController {
             emailTextField.text = email
             emailTextField.isEnabled = false
         }
-        validateButton()
     }
     
     @IBAction func emailBeginEditing(_ sender: Any) {
@@ -103,31 +111,10 @@ extension EmailEditorViewController {
         
         infoLabel.textColor = .gray
         infoLabel.text = "Informe o e-mail associado à sua conta"
-        
-        validateButton()
     }
     
     @IBAction func emailEndEditing(_ sender: Any) {
         emailTextField.setEditingColor()
-    }
-    
-    fileprivate func validateButton() {
-        if !emailTextField.text!.isEmpty {
-            enableCreateButton()
-        } else {
-            disableCreateButton()
-        }
-    }
-    
-    fileprivate func disableCreateButton() {
-        changeEmailButton.backgroundColor = .gray
-        changeEmailButton.setTitleColor(.black, for: .normal)
-        changeEmailButton.isEnabled = false
-    }
-    
-    fileprivate func enableCreateButton() {
-        changeEmailButton.setTitleColor(.white, for: .normal)
-        changeEmailButton.isEnabled = true
     }
 }
 

@@ -78,10 +78,6 @@
                                             <action selector="tappedSaveButton:" destination="oQe-LA-2Bw" eventType="touchUpInside" id="Yyg-g1-54Q"/>
                                         </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-fH-MSM">
-                                        <rect key="frame" x="0.0" y="440" width="414" height="162"/>
-                                        <locale key="locale" localeIdentifier="pt_BR"/>
-                                    </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3d-aW-Oxw">
                                         <rect key="frame" x="366" y="0.0" width="48" height="48"/>
                                         <constraints>
@@ -110,12 +106,9 @@
                                     <constraint firstItem="1Ou-EQ-wAN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k39-he-BF1" secondAttribute="bottom" constant="80" id="BgM-ee-tqz"/>
                                     <constraint firstAttribute="trailing" secondItem="2zb-cu-BPc" secondAttribute="trailing" constant="20" id="FtM-1E-UcZ"/>
                                     <constraint firstItem="5NV-kZ-iGs" firstAttribute="leading" secondItem="nxr-jl-WZv" secondAttribute="leading" constant="20" id="GoV-6I-xhz"/>
-                                    <constraint firstItem="I8e-fH-MSM" firstAttribute="leading" secondItem="nxr-jl-WZv" secondAttribute="leading" id="IjM-A4-w3d"/>
                                     <constraint firstAttribute="trailing" secondItem="ROY-v5-wSS" secondAttribute="trailing" constant="20" id="L6z-BF-FUL"/>
                                     <constraint firstItem="k39-he-BF1" firstAttribute="top" secondItem="2zb-cu-BPc" secondAttribute="bottom" constant="40" id="LGk-9A-bOy"/>
-                                    <constraint firstItem="I8e-fH-MSM" firstAttribute="top" secondItem="k39-he-BF1" secondAttribute="bottom" constant="69" id="LHU-J9-Bxc"/>
                                     <constraint firstItem="ROY-v5-wSS" firstAttribute="leading" secondItem="k39-he-BF1" secondAttribute="trailing" constant="20" id="LLr-6D-wiE"/>
-                                    <constraint firstItem="1Ou-EQ-wAN" firstAttribute="top" secondItem="I8e-fH-MSM" secondAttribute="bottom" constant="128" id="PS6-mu-eWh"/>
                                     <constraint firstItem="2zb-cu-BPc" firstAttribute="leading" secondItem="nxr-jl-WZv" secondAttribute="leading" constant="20" id="Q2u-iH-N8B"/>
                                     <constraint firstItem="2zb-cu-BPc" firstAttribute="top" secondItem="5NV-kZ-iGs" secondAttribute="bottom" constant="160" id="Sge-HO-lcJ"/>
                                     <constraint firstItem="W3d-aW-Oxw" firstAttribute="leading" secondItem="nxr-jl-WZv" secondAttribute="leading" constant="366" id="Shb-NR-0Tk"/>
@@ -125,7 +118,6 @@
                                     <constraint firstItem="2zb-cu-BPc" firstAttribute="top" secondItem="W3d-aW-Oxw" secondAttribute="bottom" constant="187" id="dSe-Vw-kYL"/>
                                     <constraint firstAttribute="bottom" secondItem="1Ou-EQ-wAN" secondAttribute="bottom" constant="40" id="dcx-4t-Eua"/>
                                     <constraint firstItem="W3d-aW-Oxw" firstAttribute="top" secondItem="nxr-jl-WZv" secondAttribute="top" id="ddg-TH-8va"/>
-                                    <constraint firstAttribute="trailing" secondItem="I8e-fH-MSM" secondAttribute="trailing" id="nIo-3f-zUk"/>
                                     <constraint firstAttribute="trailing" secondItem="5NV-kZ-iGs" secondAttribute="trailing" constant="20" id="uKe-7s-NRO"/>
                                     <constraint firstAttribute="trailing" secondItem="1Ou-EQ-wAN" secondAttribute="trailing" constant="20" id="xxX-Xz-UJx"/>
                                 </constraints>
@@ -157,7 +149,6 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="bdayDatePicker" destination="I8e-fH-MSM" id="uX3-46-r6X"/>
                         <outlet property="bdayTextField" destination="ROY-v5-wSS" id="Yj4-Uo-Nnb"/>
                         <outlet property="closeButton" destination="W3d-aW-Oxw" id="zZ4-V1-RZv"/>
                         <outlet property="countryTextField" destination="k39-he-BF1" id="V9G-ki-RJa"/>

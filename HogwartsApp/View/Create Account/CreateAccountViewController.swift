@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+import CryptoKit
 
 class CreateAccountViewController: UIViewController {
 
@@ -19,7 +22,6 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var bdayLabel: UILabel!
     @IBOutlet weak var bdayTextField: UITextField!
-    @IBOutlet weak var bdayDatePicker: UIDatePicker!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -41,6 +43,10 @@ class CreateAccountViewController: UIViewController {
     var pickerCountry = UIPickerView()
     var datePicker = UIDatePicker()
     
+    var ref: DatabaseReference!
+    var userData: UserData!
+    var email = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +58,6 @@ class CreateAccountViewController: UIViewController {
     }
     
     func createDatePicker() {
-//        self.datePicker = self.bdayDatePicker
         //toolbar
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -66,6 +71,7 @@ class CreateAccountViewController: UIViewController {
         
         //Mode
         datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
         
         //Assinging the datePicker to the TextField
         bdayTextField.inputView = datePicker
@@ -95,7 +101,6 @@ class CreateAccountViewController: UIViewController {
         
         //PickerView properties
         self.countryTextField.inputView = self.pickerCountry
-        self.bdayDatePicker.isHidden = true
     }
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {
@@ -172,12 +177,13 @@ class CreateAccountViewController: UIViewController {
                             print("User name saved")
                             self?.dismiss(animated: false, completion: nil)
                         } else {
-                            print("Erro: \(error?.localizedDescription)")
+                            print("Erro: \(String(describing: error?.localizedDescription))")
                         }
                     })
                     return
                 }
                 strongSelf.continueToHome()
+                strongSelf.createUserDataInDatabase()
             }
         }
         
@@ -203,6 +209,70 @@ class CreateAccountViewController: UIViewController {
         vc.definesPresentationContext = true
         vc.modalPresentationStyle = .fullScreen
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+    }
+    
+    func createUserDataInDatabase() {
+        let db = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        let currentUser = Auth.auth().currentUser
+        
+        if (currentUser != nil) {
+            self.email = currentUser?.email ?? ""
+        }
+        
+        ref = db.child("users")
+        
+        let obj = ref.child(userID!)
+        print("UserID saved in Database", obj)
+        
+        obj.observe(DataEventType.value, with: {(userData) in
+            let value = userData.value
+            print("UserData is Nil", value is NSNull)
+            
+            do {
+                if (value is NSNull) {
+                    self.sendUserEmailToDatabase(email: self.email)
+                    self.sendUserNameToDatabase(userName: self.nameTextField.text!)
+                    self.sendUserCountryToDataBase(userCountry: self.countryTextField.text!)
+                    self.sendUserBdayDateToDatabase(userBdayDate: self.bdayTextField.text!)
+                } else {
+                    let jsonData = try JSONSerialization.data(withJSONObject: value as Any, options: [])
+                    self.userData = try JSONDecoder().decode(UserData.self, from: jsonData)
+                    
+                    if (self.userData != nil) {
+                        self.setLabels(userData: self.userData)
+                    }
+                }
+            } catch _ {
+                print(ServiceError.failure)
+            }
+        })
+    }
+    
+    private func setLabels(userData: UserData) {
+        self.nameTextField.text = userData.usersName
+        self.bdayTextField.text = userData.userBdayDate
+        self.countryTextField.text = userData.userCountry
+    }
+    
+    private func sendUserNameToDatabase(userName: String) {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child(userID!).child("usersName").setValue(userName)
+    }
+    
+    private func sendUserBdayDateToDatabase(userBdayDate: String) {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child(userID!).child("userBdayDate").setValue(userBdayDate)
+    }
+    
+    private func sendUserCountryToDataBase(userCountry: String) {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child(userID!).child("userCountry").setValue(userCountry)
+    }
+    
+    private func sendUserEmailToDatabase(email: String) {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child(userID!).child("userEmail").setValue(email)
     }
     
     fileprivate func validateForm() -> Bool {
