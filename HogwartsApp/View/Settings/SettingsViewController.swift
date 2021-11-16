@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
         setupUserInfo()
+        getImageUser()
     }
     
     private func setupUI() {
@@ -139,9 +140,10 @@ class SettingsViewController: UIViewController {
             guard let user = Auth.auth().currentUser else { return }
             let uid = user.uid
             let fileExtension = imageUrl.pathExtension
-            let fileName = "user/\(uid)/profileImages/\(fileExtension)"
+            let fileName = uid
+            //            let fileName = "user/\(uid)"
+            //            /profileImages/\(uid)\(fileExtension)"
             let metaData = StorageMetadata()
-            
             let storageReference = Storage.storage().reference().child(fileName)
             let currentUploadTask = storageReference.putFile(from: imageUrl, metadata: metaData) { (storageMetaData, error) in
                 
@@ -189,6 +191,22 @@ class SettingsViewController: UIViewController {
             completion(error == nil)
         }
     }
+    
+            func getImageUser() {
+            guard let user = Auth.auth().currentUser else { return }
+            let uid = user.uid
+            let storageReference = Storage.storage().reference().child(uid)
+            
+            storageReference.getData(maxSize: (15 * 9999 * 9999)) { (data, error) in
+                if let err = error {
+                } else {
+                    if let image  = data {
+                        let myImage: UIImage! = UIImage(data: image)
+                        self.profileImageView.image = myImage
+                    }
+                }
+            }
+        }
 }
 
 //MARK: - ImagePicker Delegate
