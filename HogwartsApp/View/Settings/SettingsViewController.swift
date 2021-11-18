@@ -28,12 +28,14 @@ class SettingsViewController: UIViewController {
     
     private let imageView = UIImageView(image: UIImage(named: "profile_icon"))
     
+    override func viewDidAppear(_ animated: Bool) { getImageUser() }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setupUI()
-        getImageUser()
+
     }
     
     private func setupUI() {
